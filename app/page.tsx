@@ -71,7 +71,7 @@ export default function Home() {
       )}
 
       <footer className="mt-16 pt-8 border-t border-gray-200 dark:border-gray-800 text-center text-gray-500 dark:text-gray-400">
-        <p>Built with Next.js 15</p>
+        <p>Vibe coded by <a href="https://twitter.com/avirajkhare00" target="_blank" rel="noopener noreferrer" className="text-blue-500 hover:underline">@avirajkhare00</a></p>
       </footer>
     </div>
   );
