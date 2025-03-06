@@ -3,9 +3,10 @@ import Image from 'next/image';
 
 interface IssueCardProps {
   issue: Issue;
+  isPR?: boolean;
 }
 
-export default function IssueCard({ issue }: IssueCardProps) {
+export default function IssueCard({ issue, isPR = false }: IssueCardProps) {
   // Format date to be more readable
   const formatDate = (dateString: string) => {
     const date = new Date(dateString);
@@ -17,7 +18,7 @@ export default function IssueCard({ issue }: IssueCardProps) {
   };
 
   return (
-    <div className="border border-gray-200 dark:border-gray-800 rounded-lg p-4 hover:shadow-md transition-shadow">
+    <div className={`border ${isPR ? 'border-purple-200 dark:border-purple-800 bg-purple-50 dark:bg-purple-900/10' : 'border-gray-200 dark:border-gray-800'} rounded-lg p-4 hover:shadow-md transition-shadow`}>
       <div className="flex items-center gap-2 mb-2">
         <Image
           src={issue.user.avatar_url}
@@ -36,7 +37,9 @@ export default function IssueCard({ issue }: IssueCardProps) {
         </a>
       </div>
       
-      <h3 className="text-lg font-semibold mb-2 line-clamp-2">
+      <div className="flex justify-between items-start mb-2">
+        <h3 className="text-lg font-semibold line-clamp-2 flex-1">
+
         <a 
           href={issue.html_url}
           target="_blank"
@@ -45,7 +48,13 @@ export default function IssueCard({ issue }: IssueCardProps) {
         >
           {issue.title}
         </a>
-      </h3>
+        </h3>
+        {isPR && (
+          <span className="ml-2 px-2 py-0.5 bg-purple-100 dark:bg-purple-800 text-purple-800 dark:text-purple-100 text-xs font-medium rounded-full">
+            PR
+          </span>
+        )}
+      </div>
       
       <div className="text-sm text-gray-500 dark:text-gray-400 mb-3">
         <span>#{issue.number}</span>

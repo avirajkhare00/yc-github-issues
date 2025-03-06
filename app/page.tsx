@@ -7,8 +7,23 @@ import LoadingSpinner from "./components/LoadingSpinner";
 
 export default function Home() {
   const [issues, setIssues] = useState<Issue[]>([]);
+  const [filteredIssues, setFilteredIssues] = useState<Issue[]>([]);
   const [loading, setLoading] = useState<boolean>(true);
   const [error, setError] = useState<string | null>(null);
+  const [showPRs, setShowPRs] = useState<boolean>(false);
+
+  // Filter issues based on showPRs state
+  useEffect(() => {
+    if (issues.length > 0) {
+      if (!showPRs) {
+        // Filter out pull requests (items with pull_request property)
+        setFilteredIssues(issues.filter(issue => !issue.hasOwnProperty('pull_request')));
+      } else {
+        // Show all issues including PRs
+        setFilteredIssues(issues);
+      }
+    }
+  }, [issues, showPRs]);
 
   useEffect(() => {
     // Fetch repositories on client side
@@ -58,13 +73,37 @@ export default function Home() {
         </div>
       ) : (
         <div>
-          <p className="mb-4 text-gray-600 dark:text-gray-400">
-            Found {issues.length} issues across {new Set(issues.map(issue => issue.repository_name)).size} repositories
-          </p>
+          <div className="flex items-center justify-between mb-6">
+            <p className="text-gray-600 dark:text-gray-400">
+              Found {issues.length} items across {new Set(issues.map(issue => issue.repository_name)).size} repositories
+              {!showPRs && ` (${issues.length - filteredIssues.length} PRs hidden)`}
+            </p>
+            
+            <div className="flex items-center space-x-2">
+              <label htmlFor="show-prs" className="text-sm font-medium cursor-pointer">
+                {showPRs ? "Hide PRs" : "Show PRs"}
+              </label>
+              <button
+                id="show-prs"
+                className={`relative inline-flex h-6 w-11 items-center rounded-full transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-500 ${showPRs ? 'bg-blue-600' : 'bg-gray-200 dark:bg-gray-700'}`}
+                onClick={() => setShowPRs(!showPRs)}
+                role="switch"
+                aria-checked={showPRs}
+              >
+                <span 
+                  className={`inline-block h-4 w-4 transform rounded-full bg-white transition-transform ${showPRs ? 'translate-x-6' : 'translate-x-1'}`}
+                />
+              </button>
+            </div>
+          </div>
           
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {issues.map((issue) => (
-              <IssueCard key={issue.id} issue={issue} />
+            {filteredIssues.map((issue) => (
+              <IssueCard 
+                key={issue.id} 
+                issue={issue} 
+                isPR={issue.hasOwnProperty('pull_request')}
+              />
             ))}
           </div>
         </div>
