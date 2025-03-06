@@ -1,3 +1,5 @@
 https://github.com/assistant-ui/assistant-ui
 https://github.com/browser-use/browser-use
 https://github.com/mastra-ai/mastra
+https://github.com/trypear/pearai-master
+https://github.com/unslothai/unsloth
