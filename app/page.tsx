@@ -4,13 +4,11 @@ import { useEffect, useState } from "react";
 import { Issue } from "./services/githubService";
 import IssueCard from "./components/IssueCard";
 import LoadingSpinner from "./components/LoadingSpinner";
-import { getRepositories } from "./utils/repoUtils";
 
 export default function Home() {
   const [issues, setIssues] = useState<Issue[]>([]);
   const [loading, setLoading] = useState<boolean>(true);
   const [error, setError] = useState<string | null>(null);
-  const [repos, setRepos] = useState<string[]>([]);
 
   useEffect(() => {
     // Fetch repositories on client side
