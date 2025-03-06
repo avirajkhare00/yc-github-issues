@@ -3,3 +3,8 @@ https://github.com/browser-use/browser-use
 https://github.com/mastra-ai/mastra
 https://github.com/trypear/pearai-master
 https://github.com/unslothai/unsloth
+https://github.com/hatchet-dev/hatchet
+https://github.com/fern-api/fern
+https://github.com/twentyhq/twenty
+https://github.com/continuedev/continue
+https://github.com/reworkd/AgentGPT
