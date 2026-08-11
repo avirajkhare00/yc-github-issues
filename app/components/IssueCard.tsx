@@ -1,9 +1,11 @@
 import { Issue } from '../services/githubService';
+import { CompanyMeta } from '../utils/repoUtils';
 import Image from 'next/image';
 
 interface IssueCardProps {
   issue: Issue;
   isPR?: boolean;
+  company?: CompanyMeta;
 }
 
 /**
@@ -23,7 +25,7 @@ function timeAgo(dateString: string) {
   return `${Math.floor(days / 365)}y ago`;
 }
 
-export default function IssueCard({ issue, isPR = false }: IssueCardProps) {
+export default function IssueCard({ issue, isPR = false, company }: IssueCardProps) {
   return (
     <article
       className={`group relative flex flex-col rounded-xl border p-4 transition-all hover:shadow-lg hover:-translate-y-0.5 ${
@@ -51,6 +53,15 @@ export default function IssueCard({ issue, isPR = false }: IssueCardProps) {
         {isPR && (
           <span className="shrink-0 px-1.5 py-0.5 rounded bg-purple-100 dark:bg-purple-900 text-purple-800 dark:text-purple-200 font-medium">
             PR
+          </span>
+        )}
+
+        {company?.is_hiring && (
+          <span
+            className="shrink-0 px-1.5 py-0.5 rounded bg-green-100 dark:bg-green-900/60 text-green-800 dark:text-green-200 font-medium"
+            title={`${company.name} is hiring — contributing here is a warm intro`}
+          >
+            hiring
           </span>
         )}
       </div>
@@ -98,6 +109,9 @@ export default function IssueCard({ issue, isPR = false }: IssueCardProps) {
         <span className="shrink-0">{timeAgo(issue.updated_at)}</span>
 
         <span className="ml-auto flex items-center gap-2 shrink-0">
+          {company && (
+            <span title={`${company.name} · YC ${company.batch}`}>{company.batch}</span>
+          )}
           {issue.comments > 0 && (
             <span title={`${issue.comments} comments`}>💬 {issue.comments}</span>
           )}

@@ -1,0 +1,402 @@
+{
+  "assistant-ui/assistant-ui": {
+    "name": "assistant-ui",
+    "batch": "Winter 2025",
+    "is_hiring": false,
+    "team_size": 3,
+    "stage": "Early",
+    "yc_url": "https://www.ycombinator.com/companies/assistant-ui"
+  },
+  "browser-use/browser-use": {
+    "name": "Browser Use",
+    "batch": "Winter 2025",
+    "is_hiring": true,
+    "team_size": 7,
+    "stage": "Early",
+    "yc_url": "https://www.ycombinator.com/companies/browser-use"
+  },
+  "mastra-ai/mastra": {
+    "name": "Mastra",
+    "batch": "Winter 2025",
+    "is_hiring": false,
+    "team_size": 30,
+    "stage": "Early",
+    "yc_url": "https://www.ycombinator.com/companies/mastra"
+  },
+  "unslothai/unsloth": {
+    "name": "Unsloth AI",
+    "batch": "Summer 2024",
+    "is_hiring": true,
+    "team_size": 8,
+    "stage": "Early",
+    "yc_url": "https://www.ycombinator.com/companies/unsloth-ai"
+  },
+  "hatchet-dev/hatchet": {
+    "name": "Hatchet",
+    "batch": "Winter 2024",
+    "is_hiring": false,
+    "team_size": 7,
+    "stage": "Early",
+    "yc_url": "https://www.ycombinator.com/companies/hatchet-run"
+  },
+  "fern-api/fern": {
+    "name": "Fern",
+    "batch": "Winter 2023",
+    "is_hiring": false,
+    "team_size": 30,
+    "stage": "Growth",
+    "yc_url": "https://www.ycombinator.com/companies/fern"
+  },
+  "twentyhq/twenty": {
+    "name": "Twenty",
+    "batch": "Summer 2023",
+    "is_hiring": true,
+    "team_size": 11,
+    "stage": "Early",
+    "yc_url": "https://www.ycombinator.com/companies/twenty"
+  },
+  "continuedev/continue": {
+    "name": "Continue",
+    "batch": "Summer 2023",
+    "is_hiring": false,
+    "team_size": 0,
+    "stage": "Early",
+    "yc_url": "https://www.ycombinator.com/companies/continue"
+  },
+  "reworkd/AgentGPT": {
+    "name": "Reworkd",
+    "batch": "Summer 2023",
+    "is_hiring": false,
+    "team_size": 1,
+    "stage": "Early",
+    "yc_url": "https://www.ycombinator.com/companies/reworkd"
+  },
+  "questdb/questdb": {
+    "name": "QuestDB",
+    "batch": "Summer 2020",
+    "is_hiring": false,
+    "team_size": 30,
+    "stage": "Early",
+    "yc_url": "https://www.ycombinator.com/companies/questdb"
+  },
+  "lancedb/lancedb": {
+    "name": "LanceDB",
+    "batch": "Winter 2022",
+    "is_hiring": false,
+    "team_size": 35,
+    "stage": "Growth",
+    "yc_url": "https://www.ycombinator.com/companies/lancedb"
+  },
+  "Infisical/infisical": {
+    "name": "Infisical",
+    "batch": "Winter 2023",
+    "is_hiring": true,
+    "team_size": 50,
+    "stage": "Growth",
+    "yc_url": "https://www.ycombinator.com/companies/infisical"
+  },
+  "mattermost/mattermost": {
+    "name": "Mattermost",
+    "batch": "Summer 2012",
+    "is_hiring": false,
+    "team_size": 120,
+    "stage": "Growth",
+    "yc_url": "https://www.ycombinator.com/companies/mattermost"
+  },
+  "paradedb/paradedb": {
+    "name": "ParadeDB",
+    "batch": "Summer 2023",
+    "is_hiring": true,
+    "team_size": 11,
+    "stage": "Early",
+    "yc_url": "https://www.ycombinator.com/companies/paradedb"
+  },
+  "keephq/keep": {
+    "name": "Keep",
+    "batch": "Winter 2023",
+    "is_hiring": false,
+    "team_size": 5,
+    "stage": "Early",
+    "yc_url": "https://www.ycombinator.com/companies/keep"
+  },
+  "PostHog/posthog": {
+    "name": "PostHog",
+    "batch": "Winter 2020",
+    "is_hiring": true,
+    "team_size": 150,
+    "stage": "Growth",
+    "yc_url": "https://www.ycombinator.com/companies/posthog"
+  },
+  "chatwoot/chatwoot": {
+    "name": "Chatwoot",
+    "batch": "Winter 2021",
+    "is_hiring": false,
+    "team_size": 12,
+    "stage": "Early",
+    "yc_url": "https://www.ycombinator.com/companies/chatwoot"
+  },
+  "replicate/keepsake": {
+    "name": "Replicate",
+    "batch": "Winter 2020",
+    "is_hiring": false,
+    "team_size": 36,
+    "stage": "Growth",
+    "yc_url": "https://www.ycombinator.com/companies/replicate"
+  },
+  "docker/model-runner": {
+    "name": "Docker",
+    "batch": "Summer 2010",
+    "is_hiring": false,
+    "team_size": 201,
+    "stage": "Growth",
+    "yc_url": "https://www.ycombinator.com/companies/docker"
+  },
+  "traceloop/openllmetry": {
+    "name": "Traceloop",
+    "batch": "Winter 2023",
+    "is_hiring": false,
+    "team_size": 9,
+    "stage": "Early",
+    "yc_url": "https://www.ycombinator.com/companies/traceloop"
+  },
+  "SigNoz/signoz": {
+    "name": "SigNoz",
+    "batch": "Winter 2021",
+    "is_hiring": true,
+    "team_size": 38,
+    "stage": "Early",
+    "yc_url": "https://www.ycombinator.com/companies/signoz"
+  },
+  "growthbook/growthbook": {
+    "name": "GrowthBook",
+    "batch": "Winter 2022",
+    "is_hiring": true,
+    "team_size": 40,
+    "stage": "Growth",
+    "yc_url": "https://www.ycombinator.com/companies/growthbook"
+  },
+  "FlowiseAI/Flowise": {
+    "name": "FlowiseAI",
+    "batch": "Summer 2023",
+    "is_hiring": false,
+    "team_size": 5,
+    "stage": "Early",
+    "yc_url": "https://www.ycombinator.com/companies/flowiseai"
+  },
+  "highlight/highlight": {
+    "name": "highlight.io",
+    "batch": "Winter 2023",
+    "is_hiring": false,
+    "team_size": 8,
+    "stage": "Early",
+    "yc_url": "https://www.ycombinator.com/companies/highlight-io"
+  },
+  "apollographql/graphql-tag": {
+    "name": "Apollo",
+    "batch": "Summer 2011",
+    "is_hiring": true,
+    "team_size": 200,
+    "stage": "Growth",
+    "yc_url": "https://www.ycombinator.com/companies/apollo"
+  },
+  "ollama/ollama": {
+    "name": "Ollama",
+    "batch": "Winter 2021",
+    "is_hiring": false,
+    "team_size": null,
+    "stage": "Growth",
+    "yc_url": "https://www.ycombinator.com/companies/ollama"
+  },
+  "rowboatlabs/rowboat": {
+    "name": "Rowboat Labs",
+    "batch": "Summer 2024",
+    "is_hiring": false,
+    "team_size": 3,
+    "stage": "Early",
+    "yc_url": "https://www.ycombinator.com/companies/rowboat-labs"
+  },
+  "citusdata/citus": {
+    "name": "Citus Data",
+    "batch": "Summer 2011",
+    "is_hiring": false,
+    "team_size": 45,
+    "stage": "Growth",
+    "yc_url": "https://www.ycombinator.com/companies/citus-data"
+  },
+  "apollographql/apollo-ios": {
+    "name": "Apollo",
+    "batch": "Summer 2011",
+    "is_hiring": true,
+    "team_size": 200,
+    "stage": "Growth",
+    "yc_url": "https://www.ycombinator.com/companies/apollo"
+  },
+  "supabase/supavisor": {
+    "name": "Supabase",
+    "batch": "Summer 2020",
+    "is_hiring": false,
+    "team_size": 120,
+    "stage": "Growth",
+    "yc_url": "https://www.ycombinator.com/companies/supabase"
+  },
+  "apollographql/graphql-subscriptions": {
+    "name": "Apollo",
+    "batch": "Summer 2011",
+    "is_hiring": true,
+    "team_size": 200,
+    "stage": "Growth",
+    "yc_url": "https://www.ycombinator.com/companies/apollo"
+  },
+  "replicate/cog": {
+    "name": "Replicate",
+    "batch": "Winter 2020",
+    "is_hiring": false,
+    "team_size": 36,
+    "stage": "Growth",
+    "yc_url": "https://www.ycombinator.com/companies/replicate"
+  },
+  "supabase/pg_graphql": {
+    "name": "Supabase",
+    "batch": "Summer 2020",
+    "is_hiring": false,
+    "team_size": 120,
+    "stage": "Growth",
+    "yc_url": "https://www.ycombinator.com/companies/supabase"
+  },
+  "supabase/auth": {
+    "name": "Supabase",
+    "batch": "Summer 2020",
+    "is_hiring": false,
+    "team_size": 120,
+    "stage": "Growth",
+    "yc_url": "https://www.ycombinator.com/companies/supabase"
+  },
+  "docker/roadmap": {
+    "name": "Docker",
+    "batch": "Summer 2010",
+    "is_hiring": false,
+    "team_size": 201,
+    "stage": "Growth",
+    "yc_url": "https://www.ycombinator.com/companies/docker"
+  },
+  "firecrawl/firecrawl": {
+    "name": "Firecrawl",
+    "batch": "Summer 2022",
+    "is_hiring": true,
+    "team_size": 35,
+    "stage": "Growth",
+    "yc_url": "https://www.ycombinator.com/companies/firecrawl"
+  },
+  "supabase/supabase": {
+    "name": "Supabase",
+    "batch": "Summer 2020",
+    "is_hiring": false,
+    "team_size": 120,
+    "stage": "Growth",
+    "yc_url": "https://www.ycombinator.com/companies/supabase"
+  },
+  "langfuse/langfuse": {
+    "name": "Langfuse",
+    "batch": "Winter 2023",
+    "is_hiring": false,
+    "team_size": 19,
+    "stage": "Early",
+    "yc_url": "https://www.ycombinator.com/companies/langfuse"
+  },
+  "supertokens/supertokens-core": {
+    "name": "SuperTokens",
+    "batch": "Summer 2020",
+    "is_hiring": true,
+    "team_size": 10,
+    "stage": "Early",
+    "yc_url": "https://www.ycombinator.com/companies/supertokens"
+  },
+  "evidentlyai/evidently": {
+    "name": "Evidently AI",
+    "batch": "Summer 2021",
+    "is_hiring": false,
+    "team_size": 2,
+    "stage": "Early",
+    "yc_url": "https://www.ycombinator.com/companies/evidently-ai"
+  },
+  "docker/buildx": {
+    "name": "Docker",
+    "batch": "Summer 2010",
+    "is_hiring": false,
+    "team_size": 201,
+    "stage": "Growth",
+    "yc_url": "https://www.ycombinator.com/companies/docker"
+  },
+  "reworkd/tarsier": {
+    "name": "Reworkd",
+    "batch": "Summer 2023",
+    "is_hiring": false,
+    "team_size": 1,
+    "stage": "Early",
+    "yc_url": "https://www.ycombinator.com/companies/reworkd"
+  },
+  "docker/mcp-gateway": {
+    "name": "Docker",
+    "batch": "Summer 2010",
+    "is_hiring": false,
+    "team_size": 201,
+    "stage": "Growth",
+    "yc_url": "https://www.ycombinator.com/companies/docker"
+  },
+  "apollographql/eslint-plugin-graphql": {
+    "name": "Apollo",
+    "batch": "Summer 2011",
+    "is_hiring": true,
+    "team_size": 200,
+    "stage": "Growth",
+    "yc_url": "https://www.ycombinator.com/companies/apollo"
+  },
+  "chatwoot/chatwoot-mobile-app": {
+    "name": "Chatwoot",
+    "batch": "Winter 2021",
+    "is_hiring": false,
+    "team_size": 12,
+    "stage": "Early",
+    "yc_url": "https://www.ycombinator.com/companies/chatwoot"
+  },
+  "apollographql/router": {
+    "name": "Apollo",
+    "batch": "Summer 2011",
+    "is_hiring": true,
+    "team_size": 200,
+    "stage": "Growth",
+    "yc_url": "https://www.ycombinator.com/companies/apollo"
+  },
+  "influxdata/influxdb-client-python": {
+    "name": "InfluxData",
+    "batch": "Winter 2013",
+    "is_hiring": true,
+    "team_size": 210,
+    "stage": "Growth",
+    "yc_url": "https://www.ycombinator.com/companies/influxdata"
+  },
+  "apollographql/apollo-link-rest": {
+    "name": "Apollo",
+    "batch": "Summer 2011",
+    "is_hiring": true,
+    "team_size": 200,
+    "stage": "Growth",
+    "yc_url": "https://www.ycombinator.com/companies/apollo"
+  },
+  "apollographql/apollo-rs": {
+    "name": "Apollo",
+    "batch": "Summer 2011",
+    "is_hiring": true,
+    "team_size": 200,
+    "stage": "Growth",
+    "yc_url": "https://www.ycombinator.com/companies/apollo"
+  },
+  "mindsdb/lightwood": {
+    "name": "MindsDB",
+    "batch": "Winter 2020",
+    "is_hiring": false,
+    "team_size": 41,
+    "stage": "Early",
+    "yc_url": "https://www.ycombinator.com/companies/mindsdb"
+  }
+}

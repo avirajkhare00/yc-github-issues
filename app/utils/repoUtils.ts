@@ -6,6 +6,39 @@ export interface Repository {
   repo: string;
 }
 
+// YC company facts, keyed by "owner/repo". Built by
+// scripts/build-repo-metadata.mjs; see repos.meta.json.
+export interface CompanyMeta {
+  name: string;
+  batch: string;
+  is_hiring: boolean;
+  team_size: number | null;
+  stage: string | null;
+  yc_url: string | null;
+}
+
+/**
+ * Reads the YC company metadata that accompanies repos.txt.
+ * @returns Metadata keyed by "owner/repo"; empty when the file is absent
+ */
+export function getCompanyMetadata(): Record<string, CompanyMeta> {
+  const metadataPath = path.join(process.cwd(), 'repos.meta.json');
+
+  // Unlike repos.txt this file is optional: without it the UI simply renders
+  // no company badges, which is a degraded view rather than a broken one.
+  if (!fs.existsSync(metadataPath)) {
+    console.warn('repos.meta.json not found; company badges will be hidden');
+    return {};
+  }
+
+  try {
+    return JSON.parse(fs.readFileSync(metadataPath, 'utf8'));
+  } catch (error) {
+    console.error('Could not parse repos.meta.json:', error);
+    return {};
+  }
+}
+
 /**
  * Reads the repositories from the repos.txt file
  * @returns Array of repository URLs
