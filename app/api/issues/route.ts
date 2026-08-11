@@ -1,5 +1,5 @@
 import { NextResponse } from 'next/server';
-import { getParsedRepositories } from '@/app/utils/repoUtils';
+import { CompanyMeta, getCompanyMetadata, getParsedRepositories } from '@/app/utils/repoUtils';
 import { fetchIssuesForRepo, Issue } from '@/app/services/githubService';
 import { mapWithConcurrency } from '@/app/utils/async';
 
@@ -25,6 +25,9 @@ const MIN_REFRESH_INTERVAL_MS = 60 * 1000;
 
 interface CachedResponse {
   issues: Issue[];
+  // Company facts keyed by "owner/repo". Sent as a lookup table rather than
+  // inlined per issue, which would repeat the same company dozens of times.
+  companies: Record<string, CompanyMeta>;
   fetchedAt: string;
   // True when some repositories failed and the list is missing their issues
   degraded: boolean;
@@ -63,6 +66,7 @@ async function fetchAllIssues(): Promise<CachedResponse> {
 
   return {
     issues: results.flatMap(result => result.issues),
+    companies: getCompanyMetadata(),
     fetchedAt: new Date().toISOString(),
     degraded: failedCount > 0
   };

@@ -2,16 +2,32 @@
 
 import { useCallback, useEffect, useMemo, useState } from "react";
 import { Issue } from "./services/githubService";
+import { CompanyMeta } from "./utils/repoUtils";
 import IssueCard from "./components/IssueCard";
 import LoadingSpinner from "./components/LoadingSpinner";
 import ThemeToggle from "./components/ThemeToggle";
 
 type SortKey = "updated" | "least-discussed" | "repo";
+type AgeKey = "6mo" | "30d" | "any";
 
 const SORT_LABELS: Record<SortKey, string> = {
   updated: "Recently updated",
   "least-discussed": "Least discussed",
   repo: "Repository"
+};
+
+// A "good first issue" nobody has touched in a year is usually already fixed
+// or abandoned, so the default hides them rather than wasting people's time.
+const AGE_LABELS: Record<AgeKey, string> = {
+  "6mo": "Active in 6 months",
+  "30d": "Active in 30 days",
+  any: "Any age"
+};
+
+const AGE_LIMIT_DAYS: Record<AgeKey, number> = {
+  "6mo": 180,
+  "30d": 30,
+  any: Infinity
 };
 
 export default function Home() {
@@ -21,12 +37,19 @@ export default function Home() {
   // Set when the API could only reach some of the configured repositories
   const [degraded, setDegraded] = useState<boolean>(false);
   const [fetchedAt, setFetchedAt] = useState<string | null>(null);
+  // Wall clock captured when the data arrived. Filtering by age needs a fixed
+  // reference point: reading the clock inside the memo would make it impure.
+  const [loadedAt, setLoadedAt] = useState<number>(0);
   const [refreshing, setRefreshing] = useState<boolean>(false);
+
+  const [companies, setCompanies] = useState<Record<string, CompanyMeta>>({});
 
   const [query, setQuery] = useState<string>("");
   const [language, setLanguage] = useState<string>("all");
   const [sort, setSort] = useState<SortKey>("updated");
+  const [age, setAge] = useState<AgeKey>("6mo");
   const [unassignedOnly, setUnassignedOnly] = useState<boolean>(true);
+  const [hiringOnly, setHiringOnly] = useState<boolean>(false);
   const [showPRs, setShowPRs] = useState<boolean>(false);
 
   const languages = useMemo(() => {
@@ -39,12 +62,19 @@ export default function Home() {
 
   const visibleIssues = useMemo(() => {
     const needle = query.trim().toLowerCase();
+    const maxAgeDays = AGE_LIMIT_DAYS[age];
 
     const filtered = issues.filter(issue => {
       // GitHub's issues endpoint also returns PRs; hide them unless asked for
       if (!showPRs && issue.is_pull_request) return false;
       if (unassignedOnly && issue.is_assigned) return false;
       if (language !== "all" && issue.language !== language) return false;
+
+      const ageDays = (loadedAt - new Date(issue.updated_at).getTime()) / 86_400_000;
+
+      if (ageDays > maxAgeDays) return false;
+
+      if (hiringOnly && !companies[issue.repository_name]?.is_hiring) return false;
 
       if (
         needle &&
@@ -63,7 +93,7 @@ export default function Home() {
 
       return new Date(b.updated_at).getTime() - new Date(a.updated_at).getTime();
     });
-  }, [issues, query, language, sort, unassignedOnly, showPRs]);
+  }, [issues, query, language, sort, age, unassignedOnly, hiringOnly, showPRs, companies, loadedAt]);
 
   const repoCount = useMemo(
     () => new Set(visibleIssues.map(issue => issue.repository_name)).size,
@@ -84,6 +114,8 @@ export default function Home() {
 
       if (response.ok) {
         setIssues(data.issues);
+        setCompanies(data.companies ?? {});
+        setLoadedAt(Date.now());
         setDegraded(Boolean(data.degraded));
         setFetchedAt(data.fetchedAt ?? null);
         setError(null);
@@ -107,15 +139,25 @@ export default function Home() {
     loadIssues(false);
   }, [loadIssues]);
 
+  // Resets to the defaults, not to "no filters at all": unassigned and
+  // 6-month-active are what make the list trustworthy, so clearing should not
+  // dump a pile of taken and abandoned issues back in.
   const resetFilters = () => {
     setQuery("");
     setLanguage("all");
-    setUnassignedOnly(false);
+    setAge("6mo");
+    setUnassignedOnly(true);
+    setHiringOnly(false);
     setShowPRs(false);
   };
 
   const filtersActive =
-    query.trim() !== "" || language !== "all" || unassignedOnly || showPRs;
+    query.trim() !== "" ||
+    language !== "all" ||
+    age !== "6mo" ||
+    !unassignedOnly ||
+    hiringOnly ||
+    showPRs;
 
   const controlClass =
     "rounded-lg border border-gray-200 dark:border-gray-800 bg-white dark:bg-gray-950 px-3 py-1.5 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500";
@@ -178,6 +220,21 @@ export default function Home() {
               </select>
             </label>
 
+            <label className="flex items-center gap-2 text-sm">
+              <span className="text-gray-600 dark:text-gray-400">Activity</span>
+              <select
+                value={age}
+                onChange={event => setAge(event.target.value as AgeKey)}
+                className={controlClass}
+              >
+                {Object.entries(AGE_LABELS).map(([value, label]) => (
+                  <option key={value} value={value}>
+                    {label}
+                  </option>
+                ))}
+              </select>
+            </label>
+
             <label className="flex items-center gap-2 text-sm cursor-pointer">
               <input
                 type="checkbox"
@@ -186,6 +243,19 @@ export default function Home() {
                 className="rounded border-gray-300 dark:border-gray-700"
               />
               Unassigned only
+            </label>
+
+            <label
+              className="flex items-center gap-2 text-sm cursor-pointer"
+              title="Only companies currently hiring — contributing is a warm intro"
+            >
+              <input
+                type="checkbox"
+                checked={hiringOnly}
+                onChange={event => setHiringOnly(event.target.checked)}
+                className="rounded border-gray-300 dark:border-gray-700"
+              />
+              Hiring only
             </label>
 
             <label className="flex items-center gap-2 text-sm cursor-pointer">
@@ -269,7 +339,12 @@ export default function Home() {
             ) : (
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
                 {visibleIssues.map(issue => (
-                  <IssueCard key={issue.id} issue={issue} isPR={issue.is_pull_request} />
+                  <IssueCard
+                    key={issue.id}
+                    issue={issue}
+                    isPR={issue.is_pull_request}
+                    company={companies[issue.repository_name]}
+                  />
                 ))}
               </div>
             )}
