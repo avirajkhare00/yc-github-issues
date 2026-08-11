@@ -47,6 +47,11 @@ export interface Issue {
   };
   repository_name: string;
   is_pull_request: boolean;
+  // An already-assigned issue is effectively taken, so the UI can hide them
+  is_assigned: boolean;
+  comments: number;
+  // Primary language of the repository, not the issue
+  language: string | null;
 }
 
 // The issue shape as GitHub returns it, narrowed to the fields we read
@@ -60,7 +65,7 @@ type GitHubIssue = Awaited<
  * @param repositoryName Full "owner/repo" name
  * @returns Trimmed issue
  */
-function toIssue(issue: GitHubIssue, repositoryName: string): Issue {
+function toIssue(issue: GitHubIssue, repositoryName: string, language: string | null): Issue {
   return {
     id: issue.id,
     number: issue.number,
@@ -79,7 +84,10 @@ function toIssue(issue: GitHubIssue, repositoryName: string): Issue {
     },
     repository_name: repositoryName,
     // GitHub's issues endpoint also returns pull requests; they carry this key
-    is_pull_request: issue.pull_request !== undefined
+    is_pull_request: issue.pull_request !== undefined,
+    is_assigned: Boolean(issue.assignee) || (issue.assignees?.length ?? 0) > 0,
+    comments: issue.comments,
+    language
   };
 }
 
@@ -93,7 +101,7 @@ function toIssue(issue: GitHubIssue, repositoryName: string): Issue {
 async function fetchIssues(
   owner: string,
   repo: string,
-  options: { labels?: string; perPage: number }
+  options: { labels?: string; perPage: number; language: string | null }
 ): Promise<Issue[]> {
   const response = await octokit.rest.issues.listForRepo({
     owner,
@@ -105,7 +113,19 @@ async function fetchIssues(
     direction: 'desc'
   });
 
-  return response.data.map(issue => toIssue(issue, `${owner}/${repo}`));
+  return response.data.map(issue => toIssue(issue, `${owner}/${repo}`, options.language));
+}
+
+/**
+ * Looks up a repository's primary language.
+ * @param owner Repository owner
+ * @param repo Repository name
+ * @returns The language, or null if unknown
+ */
+async function fetchLanguage(owner: string, repo: string): Promise<string | null> {
+  const response = await octokit.rest.repos.get({ owner, repo });
+
+  return response.data.language ?? null;
 }
 
 // A repository that genuinely has no open issues and one whose fetch failed
@@ -125,18 +145,26 @@ export interface RepoIssues {
  */
 export async function fetchIssuesForRepo(owner: string, repo: string): Promise<RepoIssues> {
   try {
+    // The language lookup is independent of the issues, so run it alongside
+    // rather than paying for an extra sequential round-trip.
     // Limit to 10 issues per repo to avoid rate limits
-    const goodFirstIssues = await fetchIssues(owner, repo, {
-      labels: 'good first issue',
-      perPage: 10
-    });
+    const [language, goodFirstIssues] = await Promise.all([
+      fetchLanguage(owner, repo),
+      fetchIssues(owner, repo, { labels: 'good first issue', perPage: 10, language: null })
+    ]);
 
     if (goodFirstIssues.length > 0) {
-      return { issues: goodFirstIssues, failed: false };
+      return {
+        issues: goodFirstIssues.map(issue => ({ ...issue, language })),
+        failed: false
+      };
     }
 
     // No good first issues, fall back to the most recently active ones
-    return { issues: await fetchIssues(owner, repo, { perPage: 5 }), failed: false };
+    return {
+      issues: await fetchIssues(owner, repo, { perPage: 5, language }),
+      failed: false
+    };
   } catch (error) {
     console.error(`Error fetching issues for ${owner}/${repo}:`, error);
     return { issues: [], failed: true };

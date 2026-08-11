@@ -1,21 +1,24 @@
 @import "tailwindcss";
 
+/* Dark mode is driven by a class on <html>, not prefers-color-scheme alone, so
+   an explicit light/dark choice can override the system setting. The "system"
+   option resolves to the same class at runtime. */
+@custom-variant dark (&:where(.dark, .dark *));
+
 :root {
   --background: #ffffff;
   --foreground: #171717;
+}
+
+.dark {
+  --background: #0a0a0a;
+  --foreground: #ededed;
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --font-sans: var(--font-geist-sans);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
 }
 
 body {
