@@ -10,9 +10,13 @@ on:
     - cron: '0 6 * * 1'
   workflow_dispatch:
 
+# Declaring any permission sets every unlisted one to none, which previously
+# denied the issue lookups the discovery script depends on.
 permissions:
   contents: write
   pull-requests: write
+  issues: read
+  metadata: read
 
 jobs:
   refresh:
@@ -27,8 +31,9 @@ jobs:
 
       - name: Discover repositories
         env:
-          # The default GITHUB_TOKEN is enough: both scripts only read public data
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          # GITHUB_TOKEN is capped at 1,000 requests/hour in Actions and this
+          # script makes ~700. Set REFRESH_TOKEN to a read-only PAT for headroom.
+          GITHUB_TOKEN: ${{ secrets.REFRESH_TOKEN || secrets.GITHUB_TOKEN }}
         run: node scripts/discover-repos.mjs --min-stars 500 --out repos.candidates.txt
 
       - name: Merge newly discovered repos into repos.txt
@@ -49,7 +54,7 @@ jobs:
 
       - name: Rebuild company metadata
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.REFRESH_TOKEN || secrets.GITHUB_TOKEN }}
         run: node scripts/build-repo-metadata.mjs
 
       - name: Summarise the change
