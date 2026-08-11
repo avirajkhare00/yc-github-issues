@@ -18,9 +18,11 @@ const siteUrl =
   process.env.NEXT_PUBLIC_SITE_URL ??
   (process.env.NODE_ENV === "development" ? "http://localhost:3000" : CANONICAL_URL);
 
-const title = "First PR — land your first PR at a YC startup that's hiring";
+// Kept under the limits social previews and search results actually enforce:
+// ~60 characters for a title, ~125 for a description, past which both truncate.
+const title = "First PR — land your first PR at a hiring YC startup";
 const description =
-  "Beginner-friendly open source issues at YC-backed startups, filtered to the ones that are unassigned, actively maintained, and at companies currently hiring.";
+  "Beginner-friendly open source issues at YC startups that are hiring. Unassigned, actively maintained, open right now.";
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
