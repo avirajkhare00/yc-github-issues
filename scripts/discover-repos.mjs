@@ -43,6 +43,10 @@ const headers = {
  * @param {string} url Absolute URL
  * @returns {Promise<any|null>} Parsed body, or null on 404
  */
+// Anything that went wrong, so a run that silently finds nothing can be
+// diagnosed from its own output instead of by guessing.
+const failures = [];
+
 async function gh(url) {
   for (let attempt = 0; attempt < 3; attempt++) {
     const response = await fetch(url, { headers });
@@ -51,22 +55,38 @@ async function gh(url) {
       return null;
     }
 
-    // Primary or secondary rate limit: wait for the window and retry
     if (response.status === 403 || response.status === 429) {
-      const reset = Number(response.headers.get('x-ratelimit-reset') || 0) * 1000;
-      const waitMs = Math.max(reset - Date.now(), 5000);
+      const remaining = response.headers.get('x-ratelimit-remaining');
+      const body = await response.text();
 
-      console.error(`  rate limited, waiting ${Math.ceil(waitMs / 1000)}s`);
+      // A 403 with quota left is a permission denial, not a rate limit.
+      // Retrying it just burns the clock, and waiting for a "reset" that is
+      // not coming would hang the job.
+      if (remaining !== '0' && /not accessible|forbidden/i.test(body)) {
+        failures.push({ url, status: 403, reason: 'permission denied' });
+        console.error(`  403 permission denied: ${url}`);
+        return null;
+      }
+
+      const reset = Number(response.headers.get('x-ratelimit-reset') || 0) * 1000;
+      const waitMs = Math.min(Math.max(reset - Date.now(), 5000), 15 * 60 * 1000);
+
+      console.error(`  rate limited (remaining=${remaining}), waiting ${Math.ceil(waitMs / 1000)}s`);
       await new Promise(resolve => setTimeout(resolve, waitMs));
       continue;
     }
 
     if (!response.ok) {
+      failures.push({ url, status: response.status, reason: response.statusText });
+      console.error(`  HTTP ${response.status} ${response.statusText}: ${url}`);
       return null;
     }
 
     return response.json();
   }
+
+  failures.push({ url, status: 0, reason: 'retries exhausted' });
+  console.error(`  gave up after 3 attempts: ${url}`);
 
   return null;
 }
@@ -201,6 +221,29 @@ async function main() {
 
   console.error(`\nResolved ${resolved}/${companies.length} companies to a GitHub org.`);
   console.error(`Wrote ${lines.length} repos with open good first issues to ${OUT_FILE}`);
+
+  if (failures.length > 0) {
+    const byReason = failures.reduce((counts, failure) => {
+      const key = `${failure.status} ${failure.reason}`;
+      counts[key] = (counts[key] ?? 0) + 1;
+      return counts;
+    }, {});
+
+    console.error(`\n${failures.length} API calls failed:`);
+    for (const [reason, count] of Object.entries(byReason)) {
+      console.error(`  ${count}x ${reason}`);
+    }
+  }
+
+  // Resolving orgs but finding almost no repos means the repo or issue
+  // endpoints were failing, not that YC ran out of open source. Exit non-zero
+  // so the workflow surfaces it instead of opening a no-op pull request.
+  if (resolved > 10 && lines.length < resolved / 10) {
+    console.error(
+      `\nOnly ${lines.length} repos from ${resolved} resolved orgs — this is a failure, not a result.`
+    );
+    process.exit(1);
+  }
 }
 
 main().catch(error => {
