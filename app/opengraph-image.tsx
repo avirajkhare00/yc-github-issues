@@ -22,14 +22,16 @@ export default async function Image() {
           width: '100%',
           display: 'flex',
           flexDirection: 'column',
-          justifyContent: 'space-between',
+          justifyContent: 'center',
           background: '#0a0a0a',
           color: '#ededed',
-          padding: '72px'
+          // X and LinkedIn overlay a title bar across the bottom of the card,
+          // so the lower ~120px is reserved and nothing meaningful sits there.
+          padding: '72px 72px 150px 72px'
         }}
       >
         <div style={{ display: 'flex', flexDirection: 'column' }}>
-          <div style={{ display: 'flex', fontSize: 30, color: '#f97316', letterSpacing: 2 }}>
+          <div style={{ display: 'flex', fontSize: 28, color: '#f97316', letterSpacing: 2 }}>
             FIRST PR
           </div>
 
@@ -59,15 +61,28 @@ export default async function Image() {
           </div>
         </div>
 
-        <div style={{ display: 'flex', gap: 64, fontSize: 30 }}>
-          <div style={{ display: 'flex', flexDirection: 'column' }}>
-            <span style={{ fontSize: 56, fontWeight: 700, color: '#4ade80' }}>{hiringCount}</span>
-            <span style={{ color: '#a1a1aa' }}>repos at hiring companies</span>
+        <div style={{ display: 'flex', alignItems: 'center', gap: 40, marginTop: 40 }}>
+          <div
+            style={{
+              display: 'flex',
+              alignItems: 'center',
+              gap: 12,
+              fontSize: 28,
+              background: '#14532d',
+              color: '#bbf7d0',
+              padding: '10px 22px',
+              borderRadius: 999
+            }}
+          >
+            {hiringCount} repos hiring now
           </div>
 
-          <div style={{ display: 'flex', flexDirection: 'column' }}>
-            <span style={{ fontSize: 56, fontWeight: 700 }}>{companyCount}</span>
-            <span style={{ color: '#a1a1aa' }}>YC companies</span>
+          <div style={{ display: 'flex', fontSize: 28, color: '#a1a1aa' }}>
+            {companyCount} YC companies
+          </div>
+
+          <div style={{ display: 'flex', fontSize: 28, color: '#f97316' }}>
+            Start contributing →
           </div>
         </div>
       </div>
