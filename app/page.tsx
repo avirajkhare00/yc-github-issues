@@ -1,54 +1,67 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useCallback, useEffect, useMemo, useState } from "react";
 import { Issue } from "./services/githubService";
 import IssueCard from "./components/IssueCard";
 import LoadingSpinner from "./components/LoadingSpinner";
 
 export default function Home() {
   const [issues, setIssues] = useState<Issue[]>([]);
-  const [filteredIssues, setFilteredIssues] = useState<Issue[]>([]);
   const [loading, setLoading] = useState<boolean>(true);
   const [error, setError] = useState<string | null>(null);
   const [showPRs, setShowPRs] = useState<boolean>(false);
+  // Set when the API could only reach some of the configured repositories
+  const [degraded, setDegraded] = useState<boolean>(false);
+  const [fetchedAt, setFetchedAt] = useState<string | null>(null);
+  const [refreshing, setRefreshing] = useState<boolean>(false);
 
-  // Filter issues based on showPRs state
-  useEffect(() => {
-    if (issues.length > 0) {
-      if (!showPRs) {
-        // Filter out pull requests (items with pull_request property)
-        setFilteredIssues(issues.filter(issue => !issue.hasOwnProperty('pull_request')));
-      } else {
-        // Show all issues including PRs
-        setFilteredIssues(issues);
-      }
+  // GitHub's issues endpoint also returns PRs; hide them unless asked for
+  const filteredIssues = useMemo(
+    () => (showPRs ? issues : issues.filter(issue => !issue.is_pull_request)),
+    [issues, showPRs]
+  );
+
+  const repoCount = useMemo(
+    () => new Set(filteredIssues.map(issue => issue.repository_name)).size,
+    [filteredIssues]
+  );
+
+  const loadIssues = useCallback(async (forceRefresh: boolean) => {
+    if (forceRefresh) {
+      setRefreshing(true);
     }
-  }, [issues, showPRs]);
+
+    try {
+      const response = await fetch(
+        forceRefresh ? '/api/issues?refresh=1' : '/api/issues',
+        forceRefresh ? { cache: 'no-store' } : undefined
+      );
+      const data = await response.json();
+
+      if (response.ok) {
+        setIssues(data.issues);
+        setDegraded(Boolean(data.degraded));
+        setFetchedAt(data.fetchedAt ?? null);
+        setError(null);
+      } else {
+        setError(data.error || 'Failed to fetch issues');
+      }
+    } catch (err) {
+      setError('An error occurred while fetching the issues');
+      console.error(err);
+    } finally {
+      setLoading(false);
+      setRefreshing(false);
+    }
+  }, []);
 
   useEffect(() => {
-    // Fetch repositories on client side
-    const fetchRepos = async () => {
-      try {
-        // We can't directly use getRepositories() on the client side
-        // Instead, we'll fetch the repos from our API
-        const response = await fetch('/api/issues');
-        const data = await response.json();
-        
-        if (response.ok) {
-          setIssues(data.issues);
-        } else {
-          setError(data.error || 'Failed to fetch issues');
-        }
-      } catch (err) {
-        setError('An error occurred while fetching the issues');
-        console.error(err);
-      } finally {
-        setLoading(false);
-      }
-    };
-
-    fetchRepos();
-  }, []);
+    // Fetch on mount. The rule guards against synchronous setState in an
+    // effect; here every setState happens after an await, once the request
+    // resolves. Better long term: load the first page server-side.
+    // eslint-disable-next-line react-hooks/set-state-in-effect
+    loadIssues(false);
+  }, [loadIssues]);
 
   return (
     <div className="min-h-screen p-8 max-w-7xl mx-auto">
@@ -73,36 +86,63 @@ export default function Home() {
         </div>
       ) : (
         <div>
+          {degraded && (
+            <div
+              role="status"
+              className="bg-amber-50 dark:bg-amber-900/20 border border-amber-200 dark:border-amber-800 p-4 rounded-lg mb-6"
+            >
+              <p className="text-amber-700 dark:text-amber-400">
+                Some repositories couldn&apos;t be reached, so this list is incomplete.
+                It refreshes automatically within a minute.
+              </p>
+            </div>
+          )}
+
           <div className="flex items-center justify-between mb-6">
             <p className="text-gray-600 dark:text-gray-400">
-              Found {issues.length} items across {new Set(issues.map(issue => issue.repository_name)).size} repositories
+              Showing {filteredIssues.length} items across {repoCount} repositories
               {!showPRs && ` (${issues.length - filteredIssues.length} PRs hidden)`}
+              {fetchedAt && (
+                <span className="block text-sm">
+                  Updated {new Date(fetchedAt).toLocaleTimeString()}
+                </span>
+              )}
             </p>
-            
-            <div className="flex items-center space-x-2">
-              <label htmlFor="show-prs" className="text-sm font-medium cursor-pointer">
-                {showPRs ? "Hide PRs" : "Show PRs"}
-              </label>
+
+            <div className="flex items-center space-x-4">
               <button
-                id="show-prs"
-                className={`relative inline-flex h-6 w-11 items-center rounded-full transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-500 ${showPRs ? 'bg-blue-600' : 'bg-gray-200 dark:bg-gray-700'}`}
-                onClick={() => setShowPRs(!showPRs)}
-                role="switch"
-                aria-checked={showPRs}
+                onClick={() => loadIssues(true)}
+                disabled={refreshing}
+                className="text-sm font-medium px-3 py-1.5 rounded-md border border-gray-200 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-800 disabled:opacity-50 disabled:cursor-not-allowed"
               >
-                <span 
-                  className={`inline-block h-4 w-4 transform rounded-full bg-white transition-transform ${showPRs ? 'translate-x-6' : 'translate-x-1'}`}
-                />
+                {refreshing ? "Refreshing…" : "Refresh"}
               </button>
+
+              <div className="flex items-center space-x-2">
+                <label htmlFor="show-prs" className="text-sm font-medium cursor-pointer">
+                  {showPRs ? "Hide PRs" : "Show PRs"}
+                </label>
+                <button
+                  id="show-prs"
+                  className={`relative inline-flex h-6 w-11 items-center rounded-full transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-500 ${showPRs ? 'bg-blue-600' : 'bg-gray-200 dark:bg-gray-700'}`}
+                  onClick={() => setShowPRs(!showPRs)}
+                  role="switch"
+                  aria-checked={showPRs}
+                >
+                  <span
+                    className={`inline-block h-4 w-4 transform rounded-full bg-white transition-transform ${showPRs ? 'translate-x-6' : 'translate-x-1'}`}
+                  />
+                </button>
+              </div>
             </div>
           </div>
           
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {filteredIssues.map((issue) => (
-              <IssueCard 
-                key={issue.id} 
-                issue={issue} 
-                isPR={issue.hasOwnProperty('pull_request')}
+              <IssueCard
+                key={issue.id}
+                issue={issue}
+                isPR={issue.is_pull_request}
               />
             ))}
           </div>

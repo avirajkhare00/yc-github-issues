@@ -1,6 +1,6 @@
 # YC GitHub Good First Issues
 
-A Next.js 15 application that fetches "good first issues" from YC-backed open source projects listed in the `repos.txt` file. This project helps developers find beginner-friendly issues to contribute to.
+A Next.js 16 application that fetches "good first issues" from YC-backed open source projects listed in the `repos.txt` file. This project helps developers find beginner-friendly issues to contribute to.
 
 ## Features
 
