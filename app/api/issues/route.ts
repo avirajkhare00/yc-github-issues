@@ -4,8 +4,9 @@ import { fetchIssuesForRepo, Issue } from '@/app/services/githubService';
 import { mapWithConcurrency } from '@/app/utils/async';
 
 // How many repositories to fetch at the same time. High enough to keep the
-// page fast, low enough to stay clear of GitHub's secondary rate limits.
-const CONCURRENCY = 8;
+// page fast across ~50 repositories, low enough to stay clear of GitHub's
+// secondary rate limits (which trigger on burst concurrency, not just volume).
+const CONCURRENCY = 12;
 
 // How long a successful response is reused before we hit GitHub again
 const CACHE_TTL_SECONDS = 15 * 60;
