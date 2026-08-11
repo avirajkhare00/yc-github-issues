@@ -2,6 +2,8 @@
 
 Land your first PR at a YC startup that's hiring.
 
+**Live: [ycfirstpr.vercel.app](https://ycfirstpr.vercel.app)**
+
 A Next.js 16 app that surfaces beginner-friendly open source issues at
 YC-backed companies — filtered down to the ones actually worth your time, and
 badged with which companies are currently recruiting. Contributing to a funded
