@@ -3,12 +3,17 @@
 import { useCallback, useEffect, useMemo, useState } from "react";
 import { Issue } from "./services/githubService";
 import { CompanyMeta } from "./utils/repoUtils";
+import {
+  AgeKey,
+  DEFAULT_FILTERS,
+  Filters,
+  SortKey,
+  filtersFromSearch,
+  searchFromFilters
+} from "./utils/filterParams";
 import IssueCard from "./components/IssueCard";
 import LoadingSpinner from "./components/LoadingSpinner";
 import ThemeToggle from "./components/ThemeToggle";
-
-type SortKey = "updated" | "least-discussed" | "repo";
-type AgeKey = "6mo" | "30d" | "any";
 
 const SORT_LABELS: Record<SortKey, string> = {
   updated: "Recently updated",
@@ -44,13 +49,20 @@ export default function Home() {
 
   const [companies, setCompanies] = useState<Record<string, CompanyMeta>>({});
 
-  const [query, setQuery] = useState<string>("");
-  const [language, setLanguage] = useState<string>("all");
-  const [sort, setSort] = useState<SortKey>("updated");
-  const [age, setAge] = useState<AgeKey>("6mo");
-  const [unassignedOnly, setUnassignedOnly] = useState<boolean>(true);
-  const [hiringOnly, setHiringOnly] = useState<boolean>(false);
-  const [showPRs, setShowPRs] = useState<boolean>(false);
+  const [filters, setFilters] = useState<Filters>(DEFAULT_FILTERS);
+  const { query, language, sort, age, unassignedOnly, hiringOnly, showPRs } = filters;
+
+  // Writes one filter through to both state and the URL, so any view can be
+  // copied out of the address bar and shared.
+  const update = useCallback(<K extends keyof Filters>(key: K, value: Filters[K]) => {
+    setFilters(current => {
+      const next = { ...current, [key]: value };
+
+      window.history.replaceState(null, "", `${window.location.pathname}${searchFromFilters(next)}`);
+
+      return next;
+    });
+  }, []);
 
   const languages = useMemo(() => {
     const present = new Set(
@@ -132,10 +144,13 @@ export default function Home() {
   }, []);
 
   useEffect(() => {
-    // Fetch on mount. The rule guards against synchronous setState in an
-    // effect; here every setState happens after an await, once the request
-    // resolves. Better long term: load the first page server-side.
+    // Adopt any filters carried in a shared link. Read from the DOM rather than
+    // useSearchParams so the page does not need a Suspense boundary.
     // eslint-disable-next-line react-hooks/set-state-in-effect
+    setFilters(filtersFromSearch(window.location.search));
+
+    // Fetch on mount. Every setState in here happens after an await, once the
+    // request resolves. Better long term: load the first page server-side.
     loadIssues(false);
   }, [loadIssues]);
 
@@ -143,12 +158,8 @@ export default function Home() {
   // 6-month-active are what make the list trustworthy, so clearing should not
   // dump a pile of taken and abandoned issues back in.
   const resetFilters = () => {
-    setQuery("");
-    setLanguage("all");
-    setAge("6mo");
-    setUnassignedOnly(true);
-    setHiringOnly(false);
-    setShowPRs(false);
+    setFilters(DEFAULT_FILTERS);
+    window.history.replaceState(null, "", window.location.pathname);
   };
 
   const filtersActive =
@@ -167,9 +178,11 @@ export default function Home() {
       <header className="border-b border-gray-200 dark:border-gray-800">
         <div className="max-w-7xl mx-auto px-6 py-8 flex items-start justify-between gap-4">
           <div>
-            <h1 className="text-2xl font-bold tracking-tight">YC Good First Issues</h1>
+            <h1 className="text-2xl font-bold tracking-tight">
+              First PR
+            </h1>
             <p className="text-sm text-gray-600 dark:text-gray-400 mt-1">
-              Beginner-friendly issues from YC-backed open source projects
+              Land your first PR at a YC startup that&apos;s hiring
             </p>
           </div>
 
@@ -183,7 +196,7 @@ export default function Home() {
             <input
               type="search"
               value={query}
-              onChange={event => setQuery(event.target.value)}
+              onChange={event => update("query", event.target.value)}
               placeholder="Search title or repository…"
               aria-label="Search issues"
               className={`${controlClass} flex-1 min-w-[14rem]`}
@@ -193,7 +206,7 @@ export default function Home() {
               <span className="text-gray-600 dark:text-gray-400">Language</span>
               <select
                 value={language}
-                onChange={event => setLanguage(event.target.value)}
+                onChange={event => update("language", event.target.value)}
                 className={controlClass}
               >
                 <option value="all">All</option>
@@ -209,7 +222,7 @@ export default function Home() {
               <span className="text-gray-600 dark:text-gray-400">Sort</span>
               <select
                 value={sort}
-                onChange={event => setSort(event.target.value as SortKey)}
+                onChange={event => update("sort", event.target.value as SortKey)}
                 className={controlClass}
               >
                 {Object.entries(SORT_LABELS).map(([value, label]) => (
@@ -224,7 +237,7 @@ export default function Home() {
               <span className="text-gray-600 dark:text-gray-400">Activity</span>
               <select
                 value={age}
-                onChange={event => setAge(event.target.value as AgeKey)}
+                onChange={event => update("age", event.target.value as AgeKey)}
                 className={controlClass}
               >
                 {Object.entries(AGE_LABELS).map(([value, label]) => (
@@ -239,7 +252,7 @@ export default function Home() {
               <input
                 type="checkbox"
                 checked={unassignedOnly}
-                onChange={event => setUnassignedOnly(event.target.checked)}
+                onChange={event => update("unassignedOnly", event.target.checked)}
                 className="rounded border-gray-300 dark:border-gray-700"
               />
               Unassigned only
@@ -252,7 +265,7 @@ export default function Home() {
               <input
                 type="checkbox"
                 checked={hiringOnly}
-                onChange={event => setHiringOnly(event.target.checked)}
+                onChange={event => update("hiringOnly", event.target.checked)}
                 className="rounded border-gray-300 dark:border-gray-700"
               />
               Hiring only
@@ -262,7 +275,7 @@ export default function Home() {
               <input
                 type="checkbox"
                 checked={showPRs}
-                onChange={event => setShowPRs(event.target.checked)}
+                onChange={event => update("showPRs", event.target.checked)}
                 className="rounded border-gray-300 dark:border-gray-700"
               />
               Show PRs

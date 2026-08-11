@@ -1,0 +1,78 @@
+name: Refresh YC data
+
+# The hiring badge is the product's differentiator, and isHiring is a
+# point-in-time snapshot baked into repos.meta.json at build time. Without this
+# job the badges silently go stale and the one claim the product is built on
+# stops being true.
+on:
+  schedule:
+    # Mondays at 06:00 UTC
+    - cron: '0 6 * * 1'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  pull-requests: write
+
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v5
+
+      - uses: actions/setup-node@v5
+        with:
+          node-version: 22
+
+      - name: Discover repositories
+        env:
+          # The default GITHUB_TOKEN is enough: both scripts only read public data
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: node scripts/discover-repos.mjs --min-stars 500 --out repos.candidates.txt
+
+      - name: Merge newly discovered repos into repos.txt
+        run: |
+          python3 - <<'EOF'
+          existing = [l.strip() for l in open('repos.txt') if l.strip()]
+          found = [l.strip() for l in open('repos.candidates.txt') if l.strip()]
+          seen, out = set(), []
+          for url in existing + found:
+              key = url.rstrip('/').lower()
+              if key not in seen:
+                  seen.add(key)
+                  out.append(url)
+          open('repos.txt', 'w').write('\n'.join(out) + '\n')
+          print(f"{len(existing)} existing + {len(found)} discovered -> {len(out)} unique")
+          EOF
+          rm -f repos.candidates.txt
+
+      - name: Rebuild company metadata
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: node scripts/build-repo-metadata.mjs
+
+      - name: Summarise the change
+        id: summary
+        run: |
+          hiring=$(python3 -c "import json;d=json.load(open('repos.meta.json'));print(sum(1 for v in d.values() if v['is_hiring']))")
+          repos=$(grep -c . repos.txt)
+          echo "hiring=$hiring" >> "$GITHUB_OUTPUT"
+          echo "repos=$repos" >> "$GITHUB_OUTPUT"
+
+      - name: Open a pull request if anything changed
+        uses: peter-evans/create-pull-request@v7
+        with:
+          commit-message: 'Refresh YC repo list and company metadata'
+          branch: chore/refresh-yc-data
+          delete-branch: true
+          title: 'Weekly refresh: YC repos and hiring data'
+          body: |
+            Automated refresh of the YC dataset.
+
+            - **${{ steps.summary.outputs.repos }}** repositories tracked
+            - **${{ steps.summary.outputs.hiring }}** at companies currently hiring
+
+            Review the diff before merging: a company dropping off the hiring
+            list, or a repo disappearing, is worth a glance rather than an
+            automatic merge.
