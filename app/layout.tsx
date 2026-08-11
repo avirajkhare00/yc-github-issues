@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Geist } from "next/font/google";
+import { Analytics } from "@vercel/analytics/next";
 import "./globals.css";
 
 const geistSans = Geist({
@@ -7,9 +8,33 @@ const geistSans = Geist({
   subsets: ["latin"],
 });
 
+// Absolute URLs are required for OG tags. Vercel injects VERCEL_URL per
+// deployment; NEXT_PUBLIC_SITE_URL pins it once there is a real domain.
+const siteUrl =
+  process.env.NEXT_PUBLIC_SITE_URL ??
+  (process.env.VERCEL_URL ? `https://${process.env.VERCEL_URL}` : "http://localhost:3000");
+
+const title = "First PR — land your first PR at a YC startup that's hiring";
+const description =
+  "Beginner-friendly open source issues at YC-backed startups, filtered to the ones that are unassigned, actively maintained, and at companies currently hiring.";
+
 export const metadata: Metadata = {
-  title: "YC GitHub Good First Issues",
-  description: "Find beginner-friendly issues from YC-backed open source projects",
+  metadataBase: new URL(siteUrl),
+  title,
+  description,
+  openGraph: {
+    title,
+    description,
+    url: siteUrl,
+    siteName: "First PR",
+    type: "website"
+  },
+  twitter: {
+    card: "summary_large_image",
+    title,
+    description,
+    creator: "@avirajkhare00"
+  }
 };
 
 // Runs before first paint so a dark-mode visitor never sees a white flash.
@@ -44,6 +69,7 @@ export default function RootLayout({
         className={`${geistSans.variable} antialiased`}
       >
         {children}
+        <Analytics />
       </body>
     </html>
   );
