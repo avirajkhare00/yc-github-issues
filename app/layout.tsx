@@ -8,11 +8,15 @@ const geistSans = Geist({
   subsets: ["latin"],
 });
 
-// Absolute URLs are required for OG tags. Vercel injects VERCEL_URL per
-// deployment; NEXT_PUBLIC_SITE_URL pins it once there is a real domain.
+// Absolute URLs are required for OG tags. VERCEL_URL is deliberately not used
+// as the default: it is unique per deployment, so link previews would point at
+// a build-specific host that dies on the next deploy. Falls back to the
+// canonical domain, which NEXT_PUBLIC_SITE_URL overrides once a real one exists.
+const CANONICAL_URL = "https://ycfirstpr.vercel.app";
+
 const siteUrl =
   process.env.NEXT_PUBLIC_SITE_URL ??
-  (process.env.VERCEL_URL ? `https://${process.env.VERCEL_URL}` : "http://localhost:3000");
+  (process.env.NODE_ENV === "development" ? "http://localhost:3000" : CANONICAL_URL);
 
 const title = "First PR — land your first PR at a YC startup that's hiring";
 const description =
@@ -22,6 +26,9 @@ export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
   title,
   description,
+  alternates: {
+    canonical: "/"
+  },
   openGraph: {
     title,
     description,
