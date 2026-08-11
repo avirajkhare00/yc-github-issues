@@ -16,7 +16,6 @@ permissions:
   contents: write
   pull-requests: write
   issues: read
-  metadata: read
 
 jobs:
   refresh:
