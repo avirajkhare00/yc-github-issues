@@ -74,7 +74,7 @@
   "questdb/questdb": {
     "name": "QuestDB",
     "batch": "Summer 2020",
-    "is_hiring": false,
+    "is_hiring": true,
     "team_size": 30,
     "stage": "Early",
     "yc_url": "https://www.ycombinator.com/companies/questdb"
@@ -283,7 +283,7 @@
     "name": "Firecrawl",
     "batch": "Summer 2022",
     "is_hiring": true,
-    "team_size": 35,
+    "team_size": 3,
     "stage": "Growth",
     "yc_url": "https://www.ycombinator.com/companies/firecrawl"
   },
@@ -398,5 +398,13 @@
     "team_size": 41,
     "stage": "Early",
     "yc_url": "https://www.ycombinator.com/companies/mindsdb"
+  },
+  "medplum/medplum": {
+    "name": "Medplum",
+    "batch": "Summer 2022",
+    "is_hiring": true,
+    "team_size": 20,
+    "stage": "Early",
+    "yc_url": "https://www.ycombinator.com/companies/medplum"
   }
 }
