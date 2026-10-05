@@ -27,7 +27,7 @@
     "name": "Unsloth AI",
     "batch": "Summer 2024",
     "is_hiring": true,
-    "team_size": 8,
+    "team_size": 12,
     "stage": "Early",
     "yc_url": "https://www.ycombinator.com/companies/unsloth-ai"
   },
@@ -74,7 +74,7 @@
   "questdb/questdb": {
     "name": "QuestDB",
     "batch": "Summer 2020",
-    "is_hiring": false,
+    "is_hiring": true,
     "team_size": 30,
     "stage": "Early",
     "yc_url": "https://www.ycombinator.com/companies/questdb"
@@ -283,7 +283,7 @@
     "name": "Firecrawl",
     "batch": "Summer 2022",
     "is_hiring": true,
-    "team_size": 35,
+    "team_size": 3,
     "stage": "Growth",
     "yc_url": "https://www.ycombinator.com/companies/firecrawl"
   },
@@ -299,7 +299,7 @@
     "name": "Langfuse",
     "batch": "Winter 2023",
     "is_hiring": false,
-    "team_size": 19,
+    "team_size": 26,
     "stage": "Early",
     "yc_url": "https://www.ycombinator.com/companies/langfuse"
   },
@@ -398,5 +398,29 @@
     "team_size": 41,
     "stage": "Early",
     "yc_url": "https://www.ycombinator.com/companies/mindsdb"
+  },
+  "traceroot-ai/traceroot": {
+    "name": "TraceRoot.AI",
+    "batch": "Summer 2025",
+    "is_hiring": true,
+    "team_size": 4,
+    "stage": "Early",
+    "yc_url": "https://www.ycombinator.com/companies/traceroot-ai"
+  },
+  "Graphify-Labs/graphify": {
+    "name": "Graphify Labs",
+    "batch": "Summer 2026",
+    "is_hiring": false,
+    "team_size": 1,
+    "stage": "Early",
+    "yc_url": "https://www.ycombinator.com/companies/graphify-labs"
+  },
+  "medplum/medplum": {
+    "name": "Medplum",
+    "batch": "Summer 2022",
+    "is_hiring": true,
+    "team_size": 20,
+    "stage": "Early",
+    "yc_url": "https://www.ycombinator.com/companies/medplum"
   }
 }

@@ -49,3 +49,6 @@ https://github.com/influxdata/influxdb-client-python
 https://github.com/apollographql/apollo-link-rest
 https://github.com/apollographql/apollo-rs
 https://github.com/mindsdb/lightwood
+https://github.com/traceroot-ai/traceroot
+https://github.com/Graphify-Labs/graphify
+https://github.com/medplum/medplum
