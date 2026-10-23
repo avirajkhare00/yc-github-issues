@@ -19,10 +19,6 @@ const DEGRADED_CACHE_TTL_SECONDS = 60;
 // revalidates in the background
 const STALE_WHILE_REVALIDATE_SECONDS = 60 * 60;
 
-// Floor between forced refreshes. Each one costs a full round of GitHub calls,
-// so this stops the refresh button from being held down.
-const MIN_REFRESH_INTERVAL_MS = 60 * 1000;
-
 interface CachedResponse {
   issues: Issue[];
   // Company facts keyed by "owner/repo". Sent as a lookup table rather than
@@ -35,7 +31,6 @@ interface CachedResponse {
 
 let cache: CachedResponse | null = null;
 let cacheExpiresAt = 0;
-let lastFetchedAt = 0;
 // In-flight request shared by concurrent callers so a cold cache only
 // triggers one round of GitHub calls
 let inFlight: Promise<CachedResponse> | null = null;
@@ -77,13 +72,8 @@ async function fetchAllIssues(): Promise<CachedResponse> {
  * Concurrent misses share a single refresh.
  * @returns The issues, and whether they came from the cache
  */
-async function getIssues(
-  forceRefresh: boolean
-): Promise<{ response: CachedResponse; cached: boolean }> {
-  // A forced refresh skips the cache, but no more often than the floor allows
-  const refreshAllowed = forceRefresh && Date.now() - lastFetchedAt > MIN_REFRESH_INTERVAL_MS;
-
-  if (cache && Date.now() < cacheExpiresAt && !refreshAllowed) {
+async function getIssues(): Promise<{ response: CachedResponse; cached: boolean }> {
+  if (cache && Date.now() < cacheExpiresAt) {
     return { response: cache, cached: true };
   }
 
@@ -93,8 +83,7 @@ async function getIssues(
         const ttl = result.degraded ? DEGRADED_CACHE_TTL_SECONDS : CACHE_TTL_SECONDS;
 
         cache = result;
-        lastFetchedAt = Date.now();
-        cacheExpiresAt = lastFetchedAt + ttl * 1000;
+        cacheExpiresAt = Date.now() + ttl * 1000;
 
         return result;
       })
@@ -119,19 +108,16 @@ function cacheControl(degraded: boolean): string {
   return `public, s-maxage=${maxAge}, stale-while-revalidate=${STALE_WHILE_REVALIDATE_SECONDS}`;
 }
 
-export async function GET(request: Request) {
-  const forceRefresh = new URL(request.url).searchParams.get('refresh') === '1';
-
+// No client-forced refresh: it would let anyone bypass the shared cache and
+// drain the GitHub token's hourly quota. The cache TTL is the refresh.
+export async function GET() {
   try {
-    const { response, cached } = await getIssues(forceRefresh);
+    const { response, cached } = await getIssues();
 
     return NextResponse.json(
       { ...response, cached },
       {
-        headers: {
-          // A refresh must not be served from, or written to, a shared cache
-          'Cache-Control': forceRefresh ? 'no-store' : cacheControl(response.degraded)
-        }
+        headers: { 'Cache-Control': cacheControl(response.degraded) }
       }
     );
   } catch (error) {

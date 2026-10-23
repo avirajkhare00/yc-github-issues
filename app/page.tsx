@@ -45,7 +45,6 @@ export default function Home() {
   // Wall clock captured when the data arrived. Filtering by age needs a fixed
   // reference point: reading the clock inside the memo would make it impure.
   const [loadedAt, setLoadedAt] = useState<number>(0);
-  const [refreshing, setRefreshing] = useState<boolean>(false);
 
   const [companies, setCompanies] = useState<Record<string, CompanyMeta>>({});
 
@@ -112,16 +111,9 @@ export default function Home() {
     [visibleIssues]
   );
 
-  const loadIssues = useCallback(async (forceRefresh: boolean) => {
-    if (forceRefresh) {
-      setRefreshing(true);
-    }
-
+  const loadIssues = useCallback(async () => {
     try {
-      const response = await fetch(
-        forceRefresh ? '/api/issues?refresh=1' : '/api/issues',
-        forceRefresh ? { cache: 'no-store' } : undefined
-      );
+      const response = await fetch('/api/issues');
       const data = await response.json();
 
       if (response.ok) {
@@ -139,7 +131,6 @@ export default function Home() {
       console.error(err);
     } finally {
       setLoading(false);
-      setRefreshing(false);
     }
   }, []);
 
@@ -151,7 +142,7 @@ export default function Home() {
 
     // Fetch on mount. Every setState in here happens after an await, once the
     // request resolves. Better long term: load the first page server-side.
-    loadIssues(false);
+    loadIssues();
   }, [loadIssues]);
 
   // Resets to the defaults, not to "no filters at all": unassigned and
@@ -327,13 +318,6 @@ export default function Home() {
                     Clear filters
                   </button>
                 )}
-                <button
-                  onClick={() => loadIssues(true)}
-                  disabled={refreshing}
-                  className="text-sm font-medium px-3 py-1.5 rounded-lg border border-gray-200 dark:border-gray-800 hover:bg-gray-50 dark:hover:bg-gray-900 disabled:opacity-50 disabled:cursor-not-allowed"
-                >
-                  {refreshing ? "Refreshing…" : "Refresh"}
-                </button>
               </div>
             </div>
 
