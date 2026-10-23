@@ -11,7 +11,7 @@
     "name": "Browser Use",
     "batch": "Winter 2025",
     "is_hiring": true,
-    "team_size": 7,
+    "team_size": 5,
     "stage": "Early",
     "yc_url": "https://www.ycombinator.com/companies/browser-use"
   },
@@ -27,7 +27,7 @@
     "name": "Unsloth AI",
     "batch": "Summer 2024",
     "is_hiring": true,
-    "team_size": 8,
+    "team_size": 12,
     "stage": "Early",
     "yc_url": "https://www.ycombinator.com/companies/unsloth-ai"
   },
@@ -74,8 +74,8 @@
   "questdb/questdb": {
     "name": "QuestDB",
     "batch": "Summer 2020",
-    "is_hiring": false,
-    "team_size": 30,
+    "is_hiring": true,
+    "team_size": null,
     "stage": "Early",
     "yc_url": "https://www.ycombinator.com/companies/questdb"
   },
@@ -91,7 +91,7 @@
     "name": "Infisical",
     "batch": "Winter 2023",
     "is_hiring": true,
-    "team_size": 50,
+    "team_size": 70,
     "stage": "Growth",
     "yc_url": "https://www.ycombinator.com/companies/infisical"
   },
@@ -171,7 +171,7 @@
     "name": "GrowthBook",
     "batch": "Winter 2022",
     "is_hiring": true,
-    "team_size": 40,
+    "team_size": 46,
     "stage": "Growth",
     "yc_url": "https://www.ycombinator.com/companies/growthbook"
   },
@@ -283,7 +283,7 @@
     "name": "Firecrawl",
     "batch": "Summer 2022",
     "is_hiring": true,
-    "team_size": 35,
+    "team_size": 3,
     "stage": "Growth",
     "yc_url": "https://www.ycombinator.com/companies/firecrawl"
   },
@@ -299,7 +299,7 @@
     "name": "Langfuse",
     "batch": "Winter 2023",
     "is_hiring": false,
-    "team_size": 19,
+    "team_size": 26,
     "stage": "Early",
     "yc_url": "https://www.ycombinator.com/companies/langfuse"
   },
@@ -398,5 +398,773 @@
     "team_size": 41,
     "stage": "Early",
     "yc_url": "https://www.ycombinator.com/companies/mindsdb"
+  },
+  "aden-hive/hive": {
+    "name": "Aden",
+    "batch": "Winter 2020",
+    "is_hiring": false,
+    "team_size": 5,
+    "stage": "Early",
+    "yc_url": "https://www.ycombinator.com/companies/aden"
+  },
+  "traceroot-ai/traceroot": {
+    "name": "TraceRoot.AI",
+    "batch": "Summer 2025",
+    "is_hiring": true,
+    "team_size": 4,
+    "stage": "Early",
+    "yc_url": "https://www.ycombinator.com/companies/traceroot-ai"
+  },
+  "usemoss/moss": {
+    "name": "Moss",
+    "batch": "Fall 2025",
+    "is_hiring": true,
+    "team_size": 5,
+    "stage": "Early",
+    "yc_url": "https://www.ycombinator.com/companies/moss"
+  },
+  "mattermost/mattermost-plugin-github": {
+    "name": "Mattermost",
+    "batch": "Summer 2012",
+    "is_hiring": false,
+    "team_size": 120,
+    "stage": "Growth",
+    "yc_url": "https://www.ycombinator.com/companies/mattermost"
+  },
+  "ueberdosis/tiptap": {
+    "name": "Tiptap",
+    "batch": "Summer 2023",
+    "is_hiring": false,
+    "team_size": 20,
+    "stage": "Growth",
+    "yc_url": "https://www.ycombinator.com/companies/tiptap"
+  },
+  "mattermost-community/focalboard": {
+    "name": "Mattermost",
+    "batch": "Summer 2012",
+    "is_hiring": false,
+    "team_size": 120,
+    "stage": "Growth",
+    "yc_url": "https://www.ycombinator.com/companies/mattermost"
+  },
+  "SigNoz/charts": {
+    "name": "SigNoz",
+    "batch": "Winter 2021",
+    "is_hiring": true,
+    "team_size": 38,
+    "stage": "Early",
+    "yc_url": "https://www.ycombinator.com/companies/signoz"
+  },
+  "apollographql/rover": {
+    "name": "Apollo",
+    "batch": "Summer 2011",
+    "is_hiring": true,
+    "team_size": 200,
+    "stage": "Growth",
+    "yc_url": "https://www.ycombinator.com/companies/apollo"
+  },
+  "vuestorefront/magento2": {
+    "name": "Alokai",
+    "batch": "Winter 2021",
+    "is_hiring": false,
+    "team_size": 100,
+    "stage": "Growth",
+    "yc_url": "https://www.ycombinator.com/companies/alokai"
+  },
+  "lightly-ai/lightly": {
+    "name": "Lightly",
+    "batch": "Summer 2021",
+    "is_hiring": true,
+    "team_size": 5,
+    "stage": "Early",
+    "yc_url": "https://www.ycombinator.com/companies/lightly"
+  },
+  "mito-ds/mito": {
+    "name": "Mito",
+    "batch": "Summer 2020",
+    "is_hiring": false,
+    "team_size": 3,
+    "stage": "Early",
+    "yc_url": "https://www.ycombinator.com/companies/mito"
+  },
+  "superfly/flyctl": {
+    "name": "Fly.io",
+    "batch": "Winter 2020",
+    "is_hiring": false,
+    "team_size": 48,
+    "stage": "Growth",
+    "yc_url": "https://www.ycombinator.com/companies/fly-io"
+  },
+  "metriport/metriport": {
+    "name": "Metriport",
+    "batch": "Summer 2022",
+    "is_hiring": true,
+    "team_size": 29,
+    "stage": "Growth",
+    "yc_url": "https://www.ycombinator.com/companies/metriport"
+  },
+  "glideapps/quicktype": {
+    "name": "Glide",
+    "batch": "Winter 2019",
+    "is_hiring": false,
+    "team_size": 46,
+    "stage": "Growth",
+    "yc_url": "https://www.ycombinator.com/companies/glide"
+  },
+  "Ironclad/rivet": {
+    "name": "Ironclad",
+    "batch": "Summer 2015",
+    "is_hiring": true,
+    "team_size": 700,
+    "stage": "Growth",
+    "yc_url": "https://www.ycombinator.com/companies/ironclad"
+  },
+  "wasmerio/Python-Scripts": {
+    "name": "Wasmer",
+    "batch": "Summer 2019",
+    "is_hiring": true,
+    "team_size": 11,
+    "stage": "Early",
+    "yc_url": "https://www.ycombinator.com/companies/wasmer"
+  },
+  "DrDroidLab/PlayBooks": {
+    "name": "DrDroid",
+    "batch": "Winter 2023",
+    "is_hiring": false,
+    "team_size": 8,
+    "stage": "Early",
+    "yc_url": "https://www.ycombinator.com/companies/drdroid"
+  },
+  "algolia/scout-extended": {
+    "name": "Algolia",
+    "batch": "Winter 2014",
+    "is_hiring": true,
+    "team_size": 810,
+    "stage": "Growth",
+    "yc_url": "https://www.ycombinator.com/companies/algolia"
+  },
+  "fly-apps/postgres-flex": {
+    "name": "Fly.io",
+    "batch": "Winter 2020",
+    "is_hiring": false,
+    "team_size": 48,
+    "stage": "Growth",
+    "yc_url": "https://www.ycombinator.com/companies/fly-io"
+  },
+  "mattermost-community/mattermost-plugin-autolink": {
+    "name": "Mattermost",
+    "batch": "Summer 2012",
+    "is_hiring": false,
+    "team_size": 120,
+    "stage": "Growth",
+    "yc_url": "https://www.ycombinator.com/companies/mattermost"
+  },
+  "circlemind-ai/fast-graphrag": {
+    "name": "Smooth",
+    "batch": "Fall 2024",
+    "is_hiring": true,
+    "team_size": 2,
+    "stage": "Early",
+    "yc_url": "https://www.ycombinator.com/companies/smooth"
+  },
+  "hegelai/prompttools": {
+    "name": "Hegel AI",
+    "batch": "Summer 2023",
+    "is_hiring": false,
+    "team_size": 2,
+    "stage": "Early",
+    "yc_url": "https://www.ycombinator.com/companies/hegel-ai"
+  },
+  "ueberdosis/hocuspocus": {
+    "name": "Tiptap",
+    "batch": "Summer 2023",
+    "is_hiring": false,
+    "team_size": 20,
+    "stage": "Growth",
+    "yc_url": "https://www.ycombinator.com/companies/tiptap"
+  },
+  "magicpatterns/catalog": {
+    "name": "Magic Patterns",
+    "batch": "Winter 2023",
+    "is_hiring": true,
+    "team_size": 10,
+    "stage": "Early",
+    "yc_url": "https://www.ycombinator.com/companies/magic-patterns"
+  },
+  "aviator-co/av": {
+    "name": "Aviator",
+    "batch": "Summer 2021",
+    "is_hiring": true,
+    "team_size": 6,
+    "stage": "Early",
+    "yc_url": "https://www.ycombinator.com/companies/aviator"
+  },
+  "influxdata/rskafka": {
+    "name": "InfluxData",
+    "batch": "Winter 2013",
+    "is_hiring": true,
+    "team_size": 210,
+    "stage": "Growth",
+    "yc_url": "https://www.ycombinator.com/companies/influxdata"
+  },
+  "carbonfact/lea": {
+    "name": "Carbonfact",
+    "batch": "Summer 2021",
+    "is_hiring": false,
+    "team_size": 45,
+    "stage": "Growth",
+    "yc_url": "https://www.ycombinator.com/companies/carbonfact"
+  },
+  "influxdata/ui": {
+    "name": "InfluxData",
+    "batch": "Winter 2013",
+    "is_hiring": true,
+    "team_size": 210,
+    "stage": "Growth",
+    "yc_url": "https://www.ycombinator.com/companies/influxdata"
+  },
+  "mattermost/mattermost-plugin-jira": {
+    "name": "Mattermost",
+    "batch": "Summer 2012",
+    "is_hiring": false,
+    "team_size": 120,
+    "stage": "Growth",
+    "yc_url": "https://www.ycombinator.com/companies/mattermost"
+  },
+  "Graphify-Labs/graphify": {
+    "name": "Graphify Labs",
+    "batch": "Summer 2026",
+    "is_hiring": false,
+    "team_size": 1,
+    "stage": "Early",
+    "yc_url": "https://www.ycombinator.com/companies/graphify-labs"
+  },
+  "flwrlabs/flower": {
+    "name": "Flower",
+    "batch": "Winter 2023",
+    "is_hiring": false,
+    "team_size": 20,
+    "stage": "Early",
+    "yc_url": "https://www.ycombinator.com/companies/flower"
+  },
+  "lightly-ai/lightly-train": {
+    "name": "Lightly",
+    "batch": "Summer 2021",
+    "is_hiring": true,
+    "team_size": 5,
+    "stage": "Early",
+    "yc_url": "https://www.ycombinator.com/companies/lightly"
+  },
+  "alpacahq/alpaca-trade-api-go": {
+    "name": "Alpaca",
+    "batch": "Winter 2019",
+    "is_hiring": true,
+    "team_size": 150,
+    "stage": "Growth",
+    "yc_url": "https://www.ycombinator.com/companies/alpaca"
+  },
+  "Escape-Technologies/graphman": {
+    "name": "Escape",
+    "batch": "Winter 2023",
+    "is_hiring": true,
+    "team_size": 29,
+    "stage": "Growth",
+    "yc_url": "https://www.ycombinator.com/companies/escape"
+  },
+  "influxdata/pbjson": {
+    "name": "InfluxData",
+    "batch": "Winter 2013",
+    "is_hiring": true,
+    "team_size": 210,
+    "stage": "Growth",
+    "yc_url": "https://www.ycombinator.com/companies/influxdata"
+  },
+  "khoj-ai/khoj": {
+    "name": "Khoj",
+    "batch": "Summer 2023",
+    "is_hiring": false,
+    "team_size": 2,
+    "stage": "Early",
+    "yc_url": "https://www.ycombinator.com/companies/khoj"
+  },
+  "onlook-dev/onlook": {
+    "name": "Onlook",
+    "batch": "Winter 2025",
+    "is_hiring": true,
+    "team_size": 4,
+    "stage": "Early",
+    "yc_url": "https://www.ycombinator.com/companies/onlook"
+  },
+  "clidey/whodb": {
+    "name": "Clidey",
+    "batch": "Spring 2025",
+    "is_hiring": false,
+    "team_size": 5,
+    "stage": "Early",
+    "yc_url": "https://www.ycombinator.com/companies/clidey"
+  },
+  "superagent-ai/grok-cli": {
+    "name": "Superagent",
+    "batch": "Winter 2024",
+    "is_hiring": false,
+    "team_size": 2,
+    "stage": "Early",
+    "yc_url": "https://www.ycombinator.com/companies/superagent"
+  },
+  "medplum/medplum": {
+    "name": "Medplum",
+    "batch": "Summer 2022",
+    "is_hiring": true,
+    "team_size": 20,
+    "stage": "Early",
+    "yc_url": "https://www.ycombinator.com/companies/medplum"
+  },
+  "NanoNets/docext": {
+    "name": "NanoNets",
+    "batch": "Winter 2017",
+    "is_hiring": true,
+    "team_size": 102,
+    "stage": "Growth",
+    "yc_url": "https://www.ycombinator.com/companies/nanonets"
+  },
+  "superfly/corrosion": {
+    "name": "Fly.io",
+    "batch": "Winter 2020",
+    "is_hiring": false,
+    "team_size": 48,
+    "stage": "Growth",
+    "yc_url": "https://www.ycombinator.com/companies/fly-io"
+  },
+  "usewaypoint/email-builder-js": {
+    "name": "Waypoint",
+    "batch": "Winter 2021",
+    "is_hiring": false,
+    "team_size": null,
+    "stage": "Early",
+    "yc_url": "https://www.ycombinator.com/companies/waypoint"
+  },
+  "getprobo/probo": {
+    "name": "Probo",
+    "batch": "Spring 2025",
+    "is_hiring": false,
+    "team_size": 6,
+    "stage": "Early",
+    "yc_url": "https://www.ycombinator.com/companies/probo"
+  },
+  "getmetal/motorhead": {
+    "name": "Metal",
+    "batch": "Winter 2023",
+    "is_hiring": true,
+    "team_size": 17,
+    "stage": "Early",
+    "yc_url": "https://www.ycombinator.com/companies/metal"
+  },
+  "cashew-labs/libretto": {
+    "name": "Cashew Labs",
+    "batch": "Spring 2025",
+    "is_hiring": false,
+    "team_size": 2,
+    "stage": "Early",
+    "yc_url": "https://www.ycombinator.com/companies/cashew-labs"
+  },
+  "Meesho/BharatMLStack": {
+    "name": "Meesho",
+    "batch": "Summer 2016",
+    "is_hiring": true,
+    "team_size": 1450,
+    "stage": "Early",
+    "yc_url": "https://www.ycombinator.com/companies/meesho"
+  },
+  "supermedium/moonrider": {
+    "name": "Supermedium",
+    "batch": "Winter 2018",
+    "is_hiring": false,
+    "team_size": 2,
+    "stage": "Early",
+    "yc_url": "https://www.ycombinator.com/companies/supermedium"
+  },
+  "razorpay/blade": {
+    "name": "Razorpay",
+    "batch": "Winter 2015",
+    "is_hiring": true,
+    "team_size": 2700,
+    "stage": "Growth",
+    "yc_url": "https://www.ycombinator.com/companies/razorpay"
+  },
+  "dropbox/pb-jelly": {
+    "name": "Dropbox",
+    "batch": "Summer 2007",
+    "is_hiring": false,
+    "team_size": 4000,
+    "stage": "Growth",
+    "yc_url": "https://www.ycombinator.com/companies/dropbox"
+  },
+  "mbodiai/embodied-agents": {
+    "name": "Mbodi AI",
+    "batch": "Spring 2025",
+    "is_hiring": true,
+    "team_size": 6,
+    "stage": "Early",
+    "yc_url": "https://www.ycombinator.com/companies/mbodi-ai"
+  },
+  "supabase/vecs": {
+    "name": "Supabase",
+    "batch": "Summer 2020",
+    "is_hiring": false,
+    "team_size": 120,
+    "stage": "Growth",
+    "yc_url": "https://www.ycombinator.com/companies/supabase"
+  },
+  "zapier/prom-aggregation-gateway": {
+    "name": "Zapier",
+    "batch": "Summer 2012",
+    "is_hiring": true,
+    "team_size": 700,
+    "stage": "Growth",
+    "yc_url": "https://www.ycombinator.com/companies/zapier"
+  },
+  "botcity-dev/botcity-framework-core-python": {
+    "name": "BotCity",
+    "batch": "Winter 2022",
+    "is_hiring": false,
+    "team_size": 35,
+    "stage": "Growth",
+    "yc_url": "https://www.ycombinator.com/companies/botcity"
+  },
+  "trycua/cua": {
+    "name": "Cua",
+    "batch": "Spring 2025",
+    "is_hiring": true,
+    "team_size": 3,
+    "stage": "Early",
+    "yc_url": "https://www.ycombinator.com/companies/cua"
+  },
+  "Skyvern-AI/skyvern": {
+    "name": "Skyvern",
+    "batch": "Summer 2023",
+    "is_hiring": true,
+    "team_size": 11,
+    "stage": "Early",
+    "yc_url": "https://www.ycombinator.com/companies/skyvern"
+  },
+  "ubicloud/ubicloud": {
+    "name": "Ubicloud",
+    "batch": "Winter 2024",
+    "is_hiring": true,
+    "team_size": 15,
+    "stage": "Growth",
+    "yc_url": "https://www.ycombinator.com/companies/ubicloud"
+  },
+  "triggerdotdev/jsonhero-web": {
+    "name": "Trigger.dev",
+    "batch": "Winter 2023",
+    "is_hiring": false,
+    "team_size": 17,
+    "stage": "Growth",
+    "yc_url": "https://www.ycombinator.com/companies/trigger-dev"
+  },
+  "raycast/extensions": {
+    "name": "Raycast",
+    "batch": "Winter 2020",
+    "is_hiring": false,
+    "team_size": 27,
+    "stage": "Growth",
+    "yc_url": "https://www.ycombinator.com/companies/raycast"
+  },
+  "smol-machines/smolvm": {
+    "name": "smol machines",
+    "batch": "Spring 2026",
+    "is_hiring": false,
+    "team_size": 1,
+    "stage": "Early",
+    "yc_url": "https://www.ycombinator.com/companies/smol-machines"
+  },
+  "mindee/doctr": {
+    "name": "Mindee",
+    "batch": "Winter 2021",
+    "is_hiring": false,
+    "team_size": 60,
+    "stage": "Growth",
+    "yc_url": "https://www.ycombinator.com/companies/mindee"
+  },
+  "glideapps/glide-data-grid": {
+    "name": "Glide",
+    "batch": "Winter 2019",
+    "is_hiring": false,
+    "team_size": 46,
+    "stage": "Growth",
+    "yc_url": "https://www.ycombinator.com/companies/glide"
+  },
+  "magnitudedev/browser-agent": {
+    "name": "Magnitude",
+    "batch": "Summer 2025",
+    "is_hiring": false,
+    "team_size": 2,
+    "stage": "Early",
+    "yc_url": "https://www.ycombinator.com/companies/magnitude"
+  },
+  "dagger/container-use": {
+    "name": "Dagger",
+    "batch": "Winter 2019",
+    "is_hiring": false,
+    "team_size": 22,
+    "stage": "Early",
+    "yc_url": "https://www.ycombinator.com/companies/dagger"
+  },
+  "skyhook-io/radar": {
+    "name": "Skyhook",
+    "batch": "Winter 2023",
+    "is_hiring": false,
+    "team_size": 7,
+    "stage": "Early",
+    "yc_url": "https://www.ycombinator.com/companies/skyhook"
+  },
+  "morphik-org/morphik-core": {
+    "name": "Morphik",
+    "batch": "Spring 2025",
+    "is_hiring": false,
+    "team_size": 2,
+    "stage": "Early",
+    "yc_url": "https://www.ycombinator.com/companies/morphik"
+  },
+  "luminal-ai/luminal": {
+    "name": "Luminal",
+    "batch": "Summer 2025",
+    "is_hiring": true,
+    "team_size": 7,
+    "stage": "Growth",
+    "yc_url": "https://www.ycombinator.com/companies/luminal"
+  },
+  "finic-ai/rag-stack": {
+    "name": "Finic",
+    "batch": "Winter 2023",
+    "is_hiring": false,
+    "team_size": 4,
+    "stage": "Early",
+    "yc_url": "https://www.ycombinator.com/companies/finic"
+  },
+  "FortAwesome/angular-fontawesome": {
+    "name": "Font Awesome",
+    "batch": "Summer 2015",
+    "is_hiring": false,
+    "team_size": 17,
+    "stage": "Growth",
+    "yc_url": "https://www.ycombinator.com/companies/font-awesome"
+  },
+  "vellum-ai/vellum-assistant": {
+    "name": "Vellum",
+    "batch": "Winter 2023",
+    "is_hiring": false,
+    "team_size": 23,
+    "stage": "Growth",
+    "yc_url": "https://www.ycombinator.com/companies/vellum"
+  },
+  "replit/upm": {
+    "name": "Replit",
+    "batch": "Winter 2018",
+    "is_hiring": true,
+    "team_size": 65,
+    "stage": "Growth",
+    "yc_url": "https://www.ycombinator.com/companies/replit"
+  },
+  "instacart/makara": {
+    "name": "Instacart",
+    "batch": "Summer 2012",
+    "is_hiring": true,
+    "team_size": 3000,
+    "stage": "Growth",
+    "yc_url": "https://www.ycombinator.com/companies/instacart"
+  },
+  "lightly-ai/lightly-studio": {
+    "name": "Lightly",
+    "batch": "Summer 2021",
+    "is_hiring": true,
+    "team_size": 5,
+    "stage": "Early",
+    "yc_url": "https://www.ycombinator.com/companies/lightly"
+  },
+  "stripe-samples/accept-a-payment": {
+    "name": "Stripe",
+    "batch": "Summer 2009",
+    "is_hiring": true,
+    "team_size": 7000,
+    "stage": "Growth",
+    "yc_url": "https://www.ycombinator.com/companies/stripe"
+  },
+  "matterport/habitat-matterport-3dresearch": {
+    "name": "Matterport",
+    "batch": "Winter 2012",
+    "is_hiring": false,
+    "team_size": 201,
+    "stage": "Growth",
+    "yc_url": "https://www.ycombinator.com/companies/matterport"
+  },
+  "readmeio/api": {
+    "name": "ReadMe",
+    "batch": "Winter 2015",
+    "is_hiring": false,
+    "team_size": 52,
+    "stage": "Growth",
+    "yc_url": "https://www.ycombinator.com/companies/readme"
+  },
+  "elodin-sys/elodin": {
+    "name": "Elodin",
+    "batch": "Winter 2024",
+    "is_hiring": false,
+    "team_size": 5,
+    "stage": "Early",
+    "yc_url": "https://www.ycombinator.com/companies/elodin"
+  },
+  "relari-ai/continuous-eval": {
+    "name": "Relari",
+    "batch": "Winter 2024",
+    "is_hiring": true,
+    "team_size": 4,
+    "stage": "Early",
+    "yc_url": "https://www.ycombinator.com/companies/relari"
+  },
+  "twentyhq/favicon": {
+    "name": "Twenty",
+    "batch": "Summer 2023",
+    "is_hiring": true,
+    "team_size": 11,
+    "stage": "Early",
+    "yc_url": "https://www.ycombinator.com/companies/twenty"
+  },
+  "anaralabs/lector": {
+    "name": "Anara",
+    "batch": "Summer 2024",
+    "is_hiring": true,
+    "team_size": 5,
+    "stage": "Early",
+    "yc_url": "https://www.ycombinator.com/companies/anara"
+  },
+  "RequestNetwork/requestNetwork": {
+    "name": "Request Network",
+    "batch": "Winter 2017",
+    "is_hiring": false,
+    "team_size": 12,
+    "stage": "Early",
+    "yc_url": "https://www.ycombinator.com/companies/request-network"
+  },
+  "BuntingLabs/mundi.ai": {
+    "name": "Bunting Labs",
+    "batch": "Summer 2022",
+    "is_hiring": true,
+    "team_size": 2,
+    "stage": "Early",
+    "yc_url": "https://www.ycombinator.com/companies/bunting-labs"
+  },
+  "razorpay/go-financial": {
+    "name": "Razorpay",
+    "batch": "Winter 2015",
+    "is_hiring": true,
+    "team_size": 2700,
+    "stage": "Growth",
+    "yc_url": "https://www.ycombinator.com/companies/razorpay"
+  },
+  "Basedash/dockhunt": {
+    "name": "Basedash",
+    "batch": "Summer 2020",
+    "is_hiring": false,
+    "team_size": 6,
+    "stage": "Early",
+    "yc_url": "https://www.ycombinator.com/companies/basedash"
+  },
+  "mattermost-community/mattermost-plugin-jitsi": {
+    "name": "Mattermost",
+    "batch": "Summer 2012",
+    "is_hiring": false,
+    "team_size": 120,
+    "stage": "Growth",
+    "yc_url": "https://www.ycombinator.com/companies/mattermost"
+  },
+  "supabase-community/postgrest-go": {
+    "name": "Supabase",
+    "batch": "Summer 2020",
+    "is_hiring": false,
+    "team_size": 120,
+    "stage": "Growth",
+    "yc_url": "https://www.ycombinator.com/companies/supabase"
+  },
+  "algolia/algoliasearch-client-python": {
+    "name": "Algolia",
+    "batch": "Winter 2014",
+    "is_hiring": true,
+    "team_size": 810,
+    "stage": "Growth",
+    "yc_url": "https://www.ycombinator.com/companies/algolia"
+  },
+  "algolia/search-bundle": {
+    "name": "Algolia",
+    "batch": "Winter 2014",
+    "is_hiring": true,
+    "team_size": 810,
+    "stage": "Growth",
+    "yc_url": "https://www.ycombinator.com/companies/algolia"
+  },
+  "supabase-community/kahoot-alternative": {
+    "name": "Supabase",
+    "batch": "Summer 2020",
+    "is_hiring": false,
+    "team_size": 120,
+    "stage": "Growth",
+    "yc_url": "https://www.ycombinator.com/companies/supabase"
+  },
+  "mattermost/mattermost-plugin-gitlab": {
+    "name": "Mattermost",
+    "batch": "Summer 2012",
+    "is_hiring": false,
+    "team_size": 120,
+    "stage": "Growth",
+    "yc_url": "https://www.ycombinator.com/companies/mattermost"
+  },
+  "mattermost/mattermost-plugin-starter-template": {
+    "name": "Mattermost",
+    "batch": "Summer 2012",
+    "is_hiring": false,
+    "team_size": 120,
+    "stage": "Growth",
+    "yc_url": "https://www.ycombinator.com/companies/mattermost"
+  },
+  "respanai/respan-gateway": {
+    "name": "Respan",
+    "batch": "Winter 2024",
+    "is_hiring": true,
+    "team_size": 20,
+    "stage": "Early",
+    "yc_url": "https://www.ycombinator.com/companies/respan"
+  },
+  "readmeio/rdme": {
+    "name": "ReadMe",
+    "batch": "Winter 2015",
+    "is_hiring": false,
+    "team_size": 52,
+    "stage": "Growth",
+    "yc_url": "https://www.ycombinator.com/companies/readme"
+  },
+  "questdb/rust-maven-plugin": {
+    "name": "QuestDB",
+    "batch": "Summer 2020",
+    "is_hiring": true,
+    "team_size": null,
+    "stage": "Early",
+    "yc_url": "https://www.ycombinator.com/companies/questdb"
+  },
+  "coinbase/mesh-bitcoin": {
+    "name": "Coinbase",
+    "batch": "Summer 2012",
+    "is_hiring": false,
+    "team_size": 6112,
+    "stage": "Growth",
+    "yc_url": "https://www.ycombinator.com/companies/coinbase"
+  },
+  "mattermost/mattermost-plugin-zoom": {
+    "name": "Mattermost",
+    "batch": "Summer 2012",
+    "is_hiring": false,
+    "team_size": 120,
+    "stage": "Growth",
+    "yc_url": "https://www.ycombinator.com/companies/mattermost"
   }
 }
