@@ -26,6 +26,10 @@ function timeAgo(dateString: string) {
 }
 
 export default function IssueCard({ issue, isPR = false, company }: IssueCardProps) {
+  // Repos without labelled beginner issues fall back to their most recent
+  // ones, which may be anything. Say so rather than pass them off as easy.
+  const beginnerTagged = issue.labels.some(label => label.name.toLowerCase() === 'good first issue');
+
   return (
     <article
       className={`group relative flex flex-col rounded-xl border p-4 transition-all hover:shadow-lg hover:-translate-y-0.5 ${
@@ -39,7 +43,7 @@ export default function IssueCard({ issue, isPR = false, company }: IssueCardPro
           href={`https://github.com/${issue.repository_name}`}
           target="_blank"
           rel="noopener noreferrer"
-          className="font-medium text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 truncate"
+          className="relative z-10 font-medium text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 truncate"
         >
           {issue.repository_name}
         </a>
@@ -57,11 +61,25 @@ export default function IssueCard({ issue, isPR = false, company }: IssueCardPro
         )}
 
         {company?.is_hiring && (
-          <span
-            className="shrink-0 px-1.5 py-0.5 rounded bg-green-100 dark:bg-green-900/60 text-green-800 dark:text-green-200 font-medium"
-            title={`${company.name} is hiring — contributing here is a warm intro`}
+          // Links to the open roles so the badge leads somewhere. Raised above
+          // the card-wide title link, which would otherwise swallow the click.
+          <a
+            href={company.yc_url ? `${company.yc_url}/jobs` : undefined}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="relative z-10 shrink-0 px-1.5 py-0.5 rounded bg-green-100 dark:bg-green-900/60 text-green-800 dark:text-green-200 font-medium hover:underline"
+            title={`${company.name} is hiring — see open roles`}
           >
-            hiring
+            hiring ↗
+          </a>
+        )}
+
+        {!isPR && !beginnerTagged && (
+          <span
+            className="shrink-0 px-1.5 py-0.5 rounded bg-amber-50 dark:bg-amber-900/30 text-amber-700 dark:text-amber-300"
+            title="This repo has no open issues labelled for beginners, so this is one of its most recent issues"
+          >
+            not beginner-tagged
           </span>
         )}
       </div>
@@ -110,7 +128,21 @@ export default function IssueCard({ issue, isPR = false, company }: IssueCardPro
 
         <span className="ml-auto flex items-center gap-2 shrink-0">
           {company && (
-            <span title={`${company.name} · YC ${company.batch}`}>{company.batch}</span>
+            <a
+              href={company.yc_url ?? undefined}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="relative z-10 hover:underline"
+              title={[
+                company.name,
+                `YC ${company.batch}`,
+                company.team_size ? `${company.team_size} people` : null
+              ]
+                .filter(Boolean)
+                .join(' · ')}
+            >
+              {company.batch}
+            </a>
           )}
           {issue.comments > 0 && (
             <span title={`${issue.comments} comments`}>💬 {issue.comments}</span>
