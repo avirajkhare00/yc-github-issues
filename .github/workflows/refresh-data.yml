@@ -31,9 +31,9 @@ jobs:
       - name: Discover repositories
         env:
           # GITHUB_TOKEN is capped at 1,000 requests/hour in Actions and this
-          # script makes ~700. Set REFRESH_TOKEN to a read-only PAT for headroom.
+          # script makes ~700+. Set REFRESH_TOKEN to a read-only PAT for headroom.
           GITHUB_TOKEN: ${{ secrets.REFRESH_TOKEN || secrets.GITHUB_TOKEN }}
-        run: node scripts/discover-repos.mjs --min-stars 500 --out repos.candidates.txt
+        run: node scripts/discover-repos.mjs --min-stars 100 --out repos.candidates.txt
 
       - name: Merge newly discovered repos into repos.txt
         run: |
