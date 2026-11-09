@@ -145,3 +145,4 @@ https://github.com/readmeio/rdme
 https://github.com/questdb/rust-maven-plugin
 https://github.com/coinbase/mesh-bitcoin
 https://github.com/mattermost/mattermost-plugin-zoom
+https://github.com/muxinc/media-chrome

@@ -772,7 +772,7 @@
     "batch": "Summer 2016",
     "is_hiring": true,
     "team_size": 1450,
-    "stage": "Early",
+    "stage": "Growth",
     "yc_url": "https://www.ycombinator.com/companies/meesho"
   },
   "supermedium/moonrider": {
@@ -908,7 +908,7 @@
     "batch": "Winter 2019",
     "is_hiring": false,
     "team_size": 22,
-    "stage": "Early",
+    "stage": "Growth",
     "yc_url": "https://www.ycombinator.com/companies/dagger"
   },
   "skyhook-io/radar": {
@@ -1034,7 +1034,7 @@
   "anaralabs/lector": {
     "name": "Anara",
     "batch": "Summer 2024",
-    "is_hiring": true,
+    "is_hiring": false,
     "team_size": 5,
     "stage": "Early",
     "yc_url": "https://www.ycombinator.com/companies/anara"
@@ -1166,5 +1166,13 @@
     "team_size": 120,
     "stage": "Growth",
     "yc_url": "https://www.ycombinator.com/companies/mattermost"
+  },
+  "muxinc/media-chrome": {
+    "name": "Mux",
+    "batch": "Winter 2016",
+    "is_hiring": false,
+    "team_size": 95,
+    "stage": "Growth",
+    "yc_url": "https://www.ycombinator.com/companies/mux"
   }
 }

@@ -163,22 +163,6 @@
       "amplitude"
     ]
   },
-  "lendup": {
-    "name": "LendUp",
-    "batch": "Winter 2012",
-    "status": "Inactive",
-    "github": [
-      "lendup"
-    ]
-  },
-  "tilt": {
-    "name": "Tilt",
-    "batch": "Winter 2012",
-    "status": "Acquired",
-    "github": [
-      "Crowdtilt"
-    ]
-  },
   "swiftype": {
     "name": "Swiftype",
     "batch": "Winter 2012",
@@ -201,14 +185,6 @@
     "status": "Active",
     "github": [
       "pervices"
-    ]
-  },
-  "loom": {
-    "name": "Loom",
-    "batch": "Winter 2012",
-    "status": "Acquired",
-    "github": [
-      "loomhq"
     ]
   },
   "yourmechanic": {
@@ -258,14 +234,6 @@
     "status": "Acquired",
     "github": [
       "freshplum"
-    ]
-  },
-  "clutch": {
-    "name": "Clutch",
-    "batch": "Summer 2011",
-    "status": "Acquired",
-    "github": [
-      "clutch-creator"
     ]
   },
   "apollo": {
@@ -432,14 +400,6 @@
     "status": "Active",
     "github": [
       "MobileWorks"
-    ]
-  },
-  "kicksend": {
-    "name": "Kicksend",
-    "batch": "Summer 2011",
-    "status": "Inactive",
-    "github": [
-      "Kicksend"
     ]
   },
   "imgix": {
@@ -700,14 +660,6 @@
       "Simperium"
     ]
   },
-  "habit-labs": {
-    "name": "Habit Labs",
-    "batch": "Summer 2010",
-    "status": "Inactive",
-    "github": [
-      "habitlabs"
-    ]
-  },
   "demandsphere": {
     "name": "DemandSphere",
     "batch": "Summer 2010",
@@ -828,14 +780,6 @@
     "status": "Acquired",
     "github": [
       "CardpoolGiftCards"
-    ]
-  },
-  "movity": {
-    "name": "Movity",
-    "batch": "Winter 2010",
-    "status": "Acquired",
-    "github": [
-      "movity"
     ]
   },
   "notifo": {
@@ -959,14 +903,6 @@
       "cloudant-labs"
     ]
   },
-  "snipd": {
-    "name": "Snipd",
-    "batch": "Summer 2008",
-    "status": "Inactive",
-    "github": [
-      "snipd-app"
-    ]
-  },
   "trigger": {
     "name": "Trigger",
     "batch": "Winter 2008",
@@ -1008,14 +944,6 @@
       "heroku-reference-apps",
       "herokumx",
       "heroku-buildpacks"
-    ]
-  },
-  "280-north": {
-    "name": "280 North",
-    "batch": "Winter 2008",
-    "status": "Acquired",
-    "github": [
-      "280north"
     ]
   },
   "songkick": {
@@ -1140,22 +1068,6 @@
       "CanopyLabsSoftwareInc"
     ]
   },
-  "kamcord": {
-    "name": "Kamcord",
-    "batch": "Summer 2012",
-    "status": "Acquired",
-    "github": [
-      "kamcord"
-    ]
-  },
-  "statwing": {
-    "name": "Statwing",
-    "batch": "Summer 2012",
-    "status": "Acquired",
-    "github": [
-      "Statwing"
-    ]
-  },
   "rainforest": {
     "name": "Rainforest",
     "batch": "Summer 2012",
@@ -1178,14 +1090,6 @@
     "status": "Acquired",
     "github": [
       "OmniVirt"
-    ]
-  },
-  "streem": {
-    "name": "Streem",
-    "batch": "Summer 2012",
-    "status": "Acquired",
-    "github": [
-      "streem"
     ]
   },
   "human-dx": {
@@ -1261,14 +1165,6 @@
     "status": "Acquired",
     "github": [
       "Clever"
-    ]
-  },
-  "vayable": {
-    "name": "Vayable",
-    "batch": "Summer 2012",
-    "status": "Acquired",
-    "github": [
-      "Vayable"
     ]
   },
   "smartasset": {
@@ -1493,36 +1389,12 @@
       "9gag"
     ]
   },
-  "styleup": {
-    "name": "StyleUp",
-    "batch": "Winter 2013",
-    "status": "Active",
-    "github": [
-      "thestyleup"
-    ]
-  },
   "screenhero": {
     "name": "Screenhero",
     "batch": "Winter 2013",
     "status": "Acquired",
     "github": [
       "screenhero"
-    ]
-  },
-  "appcubator": {
-    "name": "Appcubator",
-    "batch": "Winter 2013",
-    "status": "Inactive",
-    "github": [
-      "appcubator"
-    ]
-  },
-  "paytango": {
-    "name": "PayTango",
-    "batch": "Winter 2013",
-    "status": "Inactive",
-    "github": [
-      "paytango"
     ]
   },
   "padlet": {
@@ -1576,14 +1448,6 @@
       "strikingly"
     ]
   },
-  "meldium": {
-    "name": "Meldium",
-    "batch": "Winter 2013",
-    "status": "Acquired",
-    "github": [
-      "meldium"
-    ]
-  },
   "swapbox": {
     "name": "Swapbox",
     "batch": "Winter 2013",
@@ -1616,14 +1480,6 @@
       "SimplyInsured"
     ]
   },
-  "crowdmed": {
-    "name": "CrowdMed",
-    "batch": "Winter 2013",
-    "status": "Inactive",
-    "github": [
-      "crowdmed"
-    ]
-  },
   "wefunder": {
     "name": "Wefunder",
     "batch": "Winter 2013",
@@ -1654,14 +1510,6 @@
     "status": "Active",
     "github": [
       "Watsi"
-    ]
-  },
-  "standard-treasury": {
-    "name": "Standard Treasury",
-    "batch": "Summer 2013",
-    "status": "Acquired",
-    "github": [
-      "standardtreasury-internal"
     ]
   },
   "stackmachine": {
@@ -1712,22 +1560,6 @@
     "status": "Active",
     "github": [
       "Estimote"
-    ]
-  },
-  "floobits": {
-    "name": "Floobits",
-    "batch": "Summer 2013",
-    "status": "Inactive",
-    "github": [
-      "Floobits"
-    ]
-  },
-  "hum": {
-    "name": "Hum",
-    "batch": "Summer 2013",
-    "status": "Inactive",
-    "github": [
-      "letshum"
     ]
   },
   "cratejoy": {
@@ -1824,14 +1656,6 @@
     "status": "Acquired",
     "github": [
       "StatusPage"
-    ]
-  },
-  "soundfocus": {
-    "name": "SoundFocus",
-    "batch": "Summer 2013",
-    "status": "Inactive",
-    "github": [
-      "soundfocus"
     ]
   },
   "true-link": {
@@ -2079,14 +1903,6 @@
       "piinpoint"
     ]
   },
-  "pipelinedb": {
-    "name": "PipelineDB",
-    "batch": "Winter 2014",
-    "status": "Acquired",
-    "github": [
-      "pipelinedb"
-    ]
-  },
   "povio": {
     "name": "Povio",
     "batch": "Winter 2014",
@@ -2118,14 +1934,6 @@
     "status": "Inactive",
     "github": [
       "edyn"
-    ]
-  },
-  "style-lend": {
-    "name": "Style Lend",
-    "batch": "Winter 2014",
-    "status": "Inactive",
-    "github": [
-      "stylelend"
     ]
   },
   "guesty": {
@@ -2217,14 +2025,6 @@
       "framed-data"
     ]
   },
-  "immunity-project": {
-    "name": "Immunity Project",
-    "batch": "Winter 2014",
-    "status": "Active",
-    "github": [
-      "immunityproject"
-    ]
-  },
   "aptible": {
     "name": "Aptible",
     "batch": "Summer 2014",
@@ -2255,14 +2055,6 @@
     "status": "Acquired",
     "github": [
       "bitaccess"
-    ]
-  },
-  "carlypso": {
-    "name": "Carlypso",
-    "batch": "Summer 2014",
-    "status": "Acquired",
-    "github": [
-      "Carlypso"
     ]
   },
   "checkr": {
@@ -2297,14 +2089,6 @@
       "flytenow"
     ]
   },
-  "taxa-biotechnologies": {
-    "name": "TAXA Biotechnologies",
-    "batch": "Summer 2014",
-    "status": "Inactive",
-    "github": [
-      "Taxa"
-    ]
-  },
   "govpredict": {
     "name": "GovPredict",
     "batch": "Summer 2014",
@@ -2319,23 +2103,6 @@
     "status": "Acquired",
     "github": [
       "blockspring"
-    ]
-  },
-  "hublo": {
-    "name": "Hublo",
-    "batch": "Summer 2014",
-    "status": "Acquired",
-    "github": [
-      "hublo",
-      "hublo-co"
-    ]
-  },
-  "impraise": {
-    "name": "Impraise",
-    "batch": "Summer 2014",
-    "status": "Acquired",
-    "github": [
-      "impraise"
     ]
   },
   "protocol-labs": {
@@ -2376,14 +2143,6 @@
     "status": "Inactive",
     "github": [
       "naytev"
-    ]
-  },
-  "neptune-io": {
-    "name": "Neptune.io",
-    "batch": "Summer 2014",
-    "status": "Inactive",
-    "github": [
-      "neptuneio"
     ]
   },
   "permutive": {
@@ -2434,14 +2193,6 @@
     "status": "Active",
     "github": [
       "usergems"
-    ]
-  },
-  "apto-payments": {
-    "name": "Apto Payments",
-    "batch": "Summer 2014",
-    "status": "Acquired",
-    "github": [
-      "AptoPayments"
     ]
   },
   "shipbob": {
@@ -2499,14 +2250,6 @@
     "status": "Acquired",
     "github": [
       "womendotcom"
-    ]
-  },
-  "zoomer": {
-    "name": "Zoomer",
-    "batch": "Summer 2014",
-    "status": "Inactive",
-    "github": [
-      "zoomer"
     ]
   },
   "front": {
@@ -2596,7 +2339,8 @@
     "status": "Active",
     "github": [
       "mezmo",
-      "logdna"
+      "logdna",
+      "mezmohq"
     ]
   },
   "numerion-labs": {
@@ -2715,14 +2459,6 @@
     "status": "Active",
     "github": [
       "readmeio"
-    ]
-  },
-  "shift-messenger": {
-    "name": "Shift Messenger",
-    "batch": "Winter 2015",
-    "status": "Inactive",
-    "github": [
-      "shift-messenger"
     ]
   },
   "sails-co": {
@@ -2951,6 +2687,14 @@
     "status": "Inactive",
     "github": [
       "ThinAir"
+    ]
+  },
+  "lumi": {
+    "name": "Lumi",
+    "batch": "Winter 2015",
+    "status": "Acquired",
+    "github": [
+      "lumihq"
     ]
   },
   "mashgin": {
@@ -3292,14 +3036,6 @@
       "AuroAi"
     ]
   },
-  "klarismo": {
-    "name": "Klarismo",
-    "batch": "Summer 2015",
-    "status": "Inactive",
-    "github": [
-      "Klarismo"
-    ]
-  },
   "bitmovin": {
     "name": "Bitmovin",
     "batch": "Summer 2015",
@@ -3446,31 +3182,6 @@
     "status": "Active",
     "github": [
       "focal-systems"
-    ]
-  },
-  "loop-genomics": {
-    "name": "Loop Genomics",
-    "batch": "Winter 2016",
-    "status": "Acquired",
-    "github": [
-      "loopgenomics"
-    ]
-  },
-  "uplabs": {
-    "name": "UpLabs",
-    "batch": "Winter 2016",
-    "status": "Inactive",
-    "github": [
-      "flutter-ui-challenges",
-      "UpLabsHQ"
-    ]
-  },
-  "worldcover": {
-    "name": "WorldCover",
-    "batch": "Winter 2016",
-    "status": "Inactive",
-    "github": [
-      "WorldCover"
     ]
   },
   "able-health": {
@@ -4197,14 +3908,6 @@
       "tryScribe"
     ]
   },
-  "riley": {
-    "name": "Riley",
-    "batch": "Winter 2017",
-    "status": "Inactive",
-    "github": [
-      "GetRileyNow"
-    ]
-  },
   "rippling": {
     "name": "Rippling",
     "batch": "Winter 2017",
@@ -4383,14 +4086,6 @@
       "alemhealthtech"
     ]
   },
-  "supr-daily": {
-    "name": "Supr Daily",
-    "batch": "Winter 2017",
-    "status": "Acquired",
-    "github": [
-      "SuprDaily"
-    ]
-  },
   "solugen": {
     "name": "Solugen",
     "batch": "Winter 2017",
@@ -4538,28 +4233,12 @@
       "tryretool"
     ]
   },
-  "humi": {
-    "name": "Humi",
-    "batch": "Winter 2017",
-    "status": "Acquired",
-    "github": [
-      "Humi-HR"
-    ]
-  },
   "jerry-inc": {
     "name": "Jerry",
     "batch": "Summer 2017",
     "status": "Active",
     "github": [
       "getjerry"
-    ]
-  },
-  "elucd": {
-    "name": "Elucd",
-    "batch": "Summer 2017",
-    "status": "Acquired",
-    "github": [
-      "elucd"
     ]
   },
   "skyways": {
@@ -4668,14 +4347,6 @@
       "greoapp"
     ]
   },
-  "escher-reality": {
-    "name": "Escher Reality",
-    "batch": "Summer 2017",
-    "status": "Acquired",
-    "github": [
-      "EscherReality"
-    ]
-  },
   "prelim": {
     "name": "Prelim",
     "batch": "Summer 2017",
@@ -4741,14 +4412,6 @@
       "Tpaga"
     ]
   },
-  "storyboard": {
-    "name": "Storyboard",
-    "batch": "Summer 2017",
-    "status": "Inactive",
-    "github": [
-      "Storyboard-fm"
-    ]
-  },
   "newfront-insurance": {
     "name": "Newfront",
     "batch": "Winter 2018",
@@ -4811,14 +4474,6 @@
     "status": "Active",
     "github": [
       "maymobility"
-    ]
-  },
-  "gamelynx": {
-    "name": "Gamelynx",
-    "batch": "Summer 2017",
-    "status": "Inactive",
-    "github": [
-      "gamelynx"
     ]
   },
   "zendar": {
@@ -4901,14 +4556,6 @@
     "status": "Acquired",
     "github": [
       "PullRequestInc"
-    ]
-  },
-  "coderwall": {
-    "name": "CoderWall",
-    "batch": "Winter 2012",
-    "status": "Acquired",
-    "github": [
-      "assemblymade"
     ]
   },
   "sketchbox": {
@@ -5213,7 +4860,7 @@
   "sharpestminds": {
     "name": "SharpestMinds",
     "batch": "Winter 2018",
-    "status": "Acquired",
+    "status": "Inactive",
     "github": [
       "SharpestProjects",
       "sharpest-minds"
@@ -5464,14 +5111,6 @@
       "RealtyBits"
     ]
   },
-  "user-hero": {
-    "name": "User Hero",
-    "batch": "Summer 2018",
-    "status": "Inactive",
-    "github": [
-      "user-hero-app"
-    ]
-  },
   "modern-treasury": {
     "name": "Modern Treasury",
     "batch": "Summer 2018",
@@ -5625,14 +5264,6 @@
     "status": "Active",
     "github": [
       "tallpoppyio"
-    ]
-  },
-  "labelflow": {
-    "name": "LabelFlow",
-    "batch": "Summer 2018",
-    "status": "Inactive",
-    "github": [
-      "labelflow"
     ]
   },
   "easol": {
@@ -5809,7 +5440,7 @@
     "batch": "Summer 2018",
     "status": "Active",
     "github": [
-      "cowrywise"
+      "cowrywiseHQ"
     ]
   },
   "mutiny": {
@@ -6085,22 +5716,6 @@
       "community-phone-company"
     ]
   },
-  "basilica": {
-    "name": "Basilica",
-    "batch": "Winter 2019",
-    "status": "Inactive",
-    "github": [
-      "basilica-ai"
-    ]
-  },
-  "weathercheck": {
-    "name": "WeatherCheck",
-    "batch": "Winter 2019",
-    "status": "Active",
-    "github": [
-      "WeatherCheck"
-    ]
-  },
   "sapling-ai": {
     "name": "Sapling.ai",
     "batch": "Winter 2019",
@@ -6164,14 +5779,6 @@
     "status": "Acquired",
     "github": [
       "vislyhq"
-    ]
-  },
-  "evo-do": {
-    "name": "Evo.Do",
-    "batch": "Winter 2019",
-    "status": "Inactive",
-    "github": [
-      "evodo"
     ]
   },
   "elph": {
@@ -6461,14 +6068,6 @@
       "glideapps"
     ]
   },
-  "datamode": {
-    "name": "Datamode",
-    "batch": "Winter 2019",
-    "status": "Inactive",
-    "github": [
-      "datamode"
-    ]
-  },
   "axdraft": {
     "name": "AXDRAFT",
     "batch": "Winter 2019",
@@ -6589,15 +6188,6 @@
       "shefhq"
     ]
   },
-  "spiral-genetics": {
-    "name": "Spiral Genetics",
-    "batch": "Winter 2019",
-    "status": "Inactive",
-    "github": [
-      "spiralgenetics",
-      "spiral-genetics"
-    ]
-  },
   "together-software": {
     "name": "Together Software",
     "batch": "Summer 2019",
@@ -6678,14 +6268,6 @@
       "MethodFi"
     ]
   },
-  "buildstream": {
-    "name": "BuildStream",
-    "batch": "Summer 2019",
-    "status": "Inactive",
-    "github": [
-      "buildstream"
-    ]
-  },
   "well-principled": {
     "name": "Well Principled",
     "batch": "Summer 2019",
@@ -6700,14 +6282,6 @@
     "status": "Active",
     "github": [
       "givelegacy"
-    ]
-  },
-  "mighty-health": {
-    "name": "Mighty Health",
-    "batch": "Summer 2019",
-    "status": "Inactive",
-    "github": [
-      "mightyhealth"
     ]
   },
   "juno-college-of-technology": {
@@ -6822,22 +6396,6 @@
       "Localitos"
     ]
   },
-  "taxproper": {
-    "name": "TaxProper",
-    "batch": "Summer 2019",
-    "status": "Acquired",
-    "github": [
-      "taxproper"
-    ]
-  },
-  "fynn": {
-    "name": "Fynn",
-    "batch": "Summer 2019",
-    "status": "Active",
-    "github": [
-      "wetradeup"
-    ]
-  },
   "zeta-surgical": {
     "name": "ZETA SURGICAL",
     "batch": "Summer 2019",
@@ -6902,14 +6460,6 @@
       "rosebudai"
     ]
   },
-  "data-mechanics": {
-    "name": "Data Mechanics",
-    "batch": "Summer 2019",
-    "status": "Acquired",
-    "github": [
-      "datamechanics"
-    ]
-  },
   "microverse": {
     "name": "Microverse",
     "batch": "Summer 2019",
@@ -6965,22 +6515,6 @@
     "status": "Inactive",
     "github": [
       "helpnow24x7"
-    ]
-  },
-  "boost-biomes": {
-    "name": "Boost Biomes",
-    "batch": "Summer 2019",
-    "status": "Inactive",
-    "github": [
-      "boostbiomes"
-    ]
-  },
-  "tensil": {
-    "name": "Tensil",
-    "batch": "Summer 2019",
-    "status": "Inactive",
-    "github": [
-      "tensil-ai"
     ]
   },
   "loop-health": {
@@ -7118,6 +6652,14 @@
     "status": "Active",
     "github": [
       "treble-ai"
+    ]
+  },
+  "coco-wallet": {
+    "name": "Coco Wallet",
+    "batch": "Summer 2019",
+    "status": "Active",
+    "github": [
+      "coco-mercado"
     ]
   },
   "deepnote": {
@@ -7378,14 +6920,6 @@
       "Brokrete"
     ]
   },
-  "jamiphy": {
-    "name": "Jamiphy",
-    "batch": "Winter 2020",
-    "status": "Inactive",
-    "github": [
-      "jamiphy"
-    ]
-  },
   "ditto": {
     "name": "Ditto",
     "batch": "Winter 2020",
@@ -7498,6 +7032,14 @@
     "status": "Active",
     "github": [
       "farcast-corp"
+    ]
+  },
+  "benepass": {
+    "name": "Benepass",
+    "batch": "Winter 2020",
+    "status": "Active",
+    "github": [
+      "benepass"
     ]
   },
   "fly-io": {
@@ -7868,14 +7410,6 @@
       "zynq-inc"
     ]
   },
-  "handl": {
-    "name": "Handl",
-    "batch": "Winter 2020",
-    "status": "Active",
-    "github": [
-      "dbrainio"
-    ]
-  },
   "nomic-bio": {
     "name": "Nomic Bio",
     "batch": "Winter 2020",
@@ -7989,14 +7523,6 @@
       "jet-admin"
     ]
   },
-  "carupi": {
-    "name": "CARUPI",
-    "batch": "Winter 2020",
-    "status": "Inactive",
-    "github": [
-      "carupi"
-    ]
-  },
   "reploy": {
     "name": "Reploy",
     "batch": "Summer 2020",
@@ -8011,14 +7537,6 @@
     "status": "Acquired",
     "github": [
       "PerchCredit"
-    ]
-  },
-  "jemi": {
-    "name": "Jemi",
-    "batch": "Summer 2020",
-    "status": "Acquired",
-    "github": [
-      "Jemi-Team"
     ]
   },
   "jitsu": {
@@ -8732,14 +8250,6 @@
       "CapWayInc"
     ]
   },
-  "brevy": {
-    "name": "Brevy",
-    "batch": "Summer 2020",
-    "status": "Acquired",
-    "github": [
-      "BrevyHQ"
-    ]
-  },
   "webiny": {
     "name": "Webiny",
     "batch": "Winter 2021",
@@ -8911,28 +8421,12 @@
       "vogent"
     ]
   },
-  "slashauth": {
-    "name": "SlashAuth",
-    "batch": "Winter 2021",
-    "status": "Inactive",
-    "github": [
-      "slashauth"
-    ]
-  },
   "moichor": {
     "name": "Moichor",
     "batch": "Winter 2021",
     "status": "Active",
     "github": [
       "moichor"
-    ]
-  },
-  "queenly": {
-    "name": "Queenly",
-    "batch": "Winter 2021",
-    "status": "Inactive",
-    "github": [
-      "QueenlyEng"
     ]
   },
   "gerald-technologies-inc": {
@@ -9198,8 +8692,8 @@
       "dashlabsai-internal",
       "dashboardlabs",
       "dashlabsai-training",
-      "dashlabsai-external",
-      "dashlabsai"
+      "dashlabsai",
+      "dashlabsai-external"
     ]
   },
   "kodo": {
@@ -9495,14 +8989,6 @@
       "tint-ai"
     ]
   },
-  "finantier": {
-    "name": "Finantier",
-    "batch": "Winter 2021",
-    "status": "Inactive",
-    "github": [
-      "finantier"
-    ]
-  },
   "taste": {
     "name": "Taste",
     "batch": "Winter 2021",
@@ -9657,15 +9143,6 @@
       "ziina-co"
     ]
   },
-  "codeball": {
-    "name": "Codeball",
-    "batch": "Winter 2021",
-    "status": "Inactive",
-    "github": [
-      "sturdy-dev",
-      "codeballai"
-    ]
-  },
   "pagaloop": {
     "name": "Pagaloop",
     "batch": "Winter 2021",
@@ -9704,14 +9181,6 @@
     "status": "Inactive",
     "github": [
       "Dataherald"
-    ]
-  },
-  "galaxy": {
-    "name": "Galaxy",
-    "batch": "Winter 2021",
-    "status": "Inactive",
-    "github": [
-      "launchpointhq"
     ]
   },
   "alpas": {
@@ -10270,6 +9739,14 @@
       "front-page"
     ]
   },
+  "affogato-ai": {
+    "name": "Affogato AI",
+    "batch": "Summer 2021",
+    "status": "Active",
+    "github": [
+      "affogato-ai"
+    ]
+  },
   "koshex": {
     "name": "Koshex",
     "batch": "Summer 2021",
@@ -10793,20 +10270,20 @@
       "Genei-Ltd"
     ]
   },
-  "miniloop": {
-    "name": "Miniloop",
-    "batch": "Summer 2021",
-    "status": "Active",
-    "github": [
-      "miniloop-ai"
-    ]
-  },
   "arengu": {
     "name": "Arengu",
     "batch": "Summer 2021",
     "status": "Acquired",
     "github": [
       "arengu"
+    ]
+  },
+  "stardex": {
+    "name": "Stardex",
+    "batch": "Summer 2021",
+    "status": "Active",
+    "github": [
+      "dotshq"
     ]
   },
   "encuadrado": {
@@ -10878,7 +10355,8 @@
     "batch": "Summer 2021",
     "status": "Active",
     "github": [
-      "lernit-org"
+      "lernit-org",
+      "lapzo-data"
     ]
   },
   "harmonic-discovery": {
@@ -11266,14 +10744,6 @@
       "SquireAI"
     ]
   },
-  "protego": {
-    "name": "Protego",
-    "batch": "Summer 2021",
-    "status": "Inactive",
-    "github": [
-      "ProtegoSolutions"
-    ]
-  },
   "evidence": {
     "name": "Evidence",
     "batch": "Summer 2021",
@@ -11572,14 +11042,6 @@
       "Craniometrix"
     ]
   },
-  "cherry-recommends": {
-    "name": "Cherry Recommends",
-    "batch": "Winter 2022",
-    "status": "Inactive",
-    "github": [
-      "x-cherryai"
-    ]
-  },
   "sei-ai": {
     "name": "Sei AI",
     "batch": "Winter 2022",
@@ -11710,6 +11172,14 @@
     "status": "Active",
     "github": [
       "upbanx"
+    ]
+  },
+  "fieldproxy": {
+    "name": "Fieldproxy",
+    "batch": "Winter 2022",
+    "status": "Active",
+    "github": [
+      "Fieldproxy"
     ]
   },
   "unlayer": {
@@ -11863,6 +11333,14 @@
     "status": "Active",
     "github": [
       "Reforged-Labs"
+    ]
+  },
+  "groundmail": {
+    "name": "Groundmail",
+    "batch": "Winter 2022",
+    "status": "Active",
+    "github": [
+      "Groundmail"
     ]
   },
   "flagright": {
@@ -12381,8 +11859,8 @@
     "batch": "Winter 2022",
     "status": "Inactive",
     "github": [
-      "marathon-edu",
-      "Marathon-Education"
+      "Marathon-Education",
+      "marathon-edu"
     ]
   },
   "finku": {
@@ -12895,18 +12373,10 @@
       "unifyai"
     ]
   },
-  "slauth-io": {
-    "name": "Slauth.io",
-    "batch": "Summer 2022",
-    "status": "Inactive",
-    "github": [
-      "slauth-io"
-    ]
-  },
   "mistle": {
     "name": "Mistle",
     "batch": "Summer 2022",
-    "status": "Active",
+    "status": "Inactive",
     "github": [
       "mistlehq"
     ]
@@ -13051,7 +12521,7 @@
   "unthread": {
     "name": "Unthread",
     "batch": "Summer 2022",
-    "status": "Active",
+    "status": "Acquired",
     "github": [
       "unthread-io"
     ]
@@ -13134,14 +12604,6 @@
     "status": "Active",
     "github": [
       "levers-inc"
-    ]
-  },
-  "jasmine-energy": {
-    "name": "Jasmine Energy",
-    "batch": "Summer 2022",
-    "status": "Inactive",
-    "github": [
-      "Jasmine-Energy"
     ]
   },
   "almond": {
@@ -13499,14 +12961,6 @@
       "edgebitio"
     ]
   },
-  "cakework": {
-    "name": "Cakework",
-    "batch": "Winter 2023",
-    "status": "Inactive",
-    "github": [
-      "usecakework"
-    ]
-  },
   "omnistrate": {
     "name": "Omnistrate",
     "batch": "Winter 2023",
@@ -13622,12 +13076,12 @@
       "FrigadeHQ"
     ]
   },
-  "suger": {
-    "name": "Suger",
+  "fours": {
+    "name": "Fours",
     "batch": "Winter 2023",
     "status": "Active",
     "github": [
-      "sugercloud"
+      "sugerio"
     ]
   },
   "dream3d": {
@@ -13949,8 +13403,16 @@
     "batch": "Winter 2023",
     "status": "Acquired",
     "github": [
-      "muffin-data",
-      "muffindata"
+      "muffindata",
+      "muffin-data"
+    ]
+  },
+  "pylon-2": {
+    "name": "Pylon",
+    "batch": "Winter 2023",
+    "status": "Active",
+    "github": [
+      "pylon-labs"
     ]
   },
   "clad": {
@@ -14130,6 +13592,14 @@
       "highlight"
     ]
   },
+  "verata": {
+    "name": "Verata",
+    "batch": "Winter 2023",
+    "status": "Active",
+    "github": [
+      "aiFlow-Inc"
+    ]
+  },
   "metal": {
     "name": "Metal",
     "batch": "Winter 2023",
@@ -14224,8 +13694,8 @@
     "batch": "Summer 2023",
     "status": "Active",
     "github": [
-      "HyLight-airship",
-      "HyLight-dev"
+      "HyLight-dev",
+      "HyLight-airship"
     ]
   },
   "artie": {
@@ -14356,20 +13826,20 @@
       "pointhound-eng"
     ]
   },
+  "readily": {
+    "name": "Readily",
+    "batch": "Summer 2023",
+    "status": "Active",
+    "github": [
+      "pandan-ai"
+    ]
+  },
   "zelos-cloud": {
     "name": "Zelos Cloud",
     "batch": "Summer 2023",
     "status": "Active",
     "github": [
       "zeloscloud"
-    ]
-  },
-  "casca": {
-    "name": "Casca",
-    "batch": "Summer 2023",
-    "status": "Active",
-    "github": [
-      "cascadingAI"
     ]
   },
   "opentools": {
@@ -14580,20 +14050,20 @@
       "decoda-health"
     ]
   },
+  "numen": {
+    "name": "Numen",
+    "batch": "Summer 2023",
+    "status": "Active",
+    "github": [
+      "numenbio"
+    ]
+  },
   "harnessrouter": {
     "name": "HarnessRouter",
     "batch": "Summer 2023",
     "status": "Active",
     "github": [
       "HarnessRouter"
-    ]
-  },
-  "sidenote": {
-    "name": "Sidenote",
-    "batch": "Summer 2023",
-    "status": "Inactive",
-    "github": [
-      "SideNoteAI"
     ]
   },
   "refine": {
@@ -15305,14 +14775,6 @@
       "CloudCruise"
     ]
   },
-  "celest": {
-    "name": "Celest",
-    "batch": "Winter 2024",
-    "status": "Inactive",
-    "github": [
-      "celest-dev"
-    ]
-  },
   "respan": {
     "name": "Respan",
     "batch": "Winter 2024",
@@ -15424,6 +14886,14 @@
     "status": "Active",
     "github": [
       "ellipsis-dev"
+    ]
+  },
+  "draftaid": {
+    "name": "Draftaid",
+    "batch": "Winter 2024",
+    "status": "Active",
+    "github": [
+      "draftaid-inc"
     ]
   },
   "codeant-ai": {
@@ -16321,6 +15791,14 @@
       "Elayne-Platform"
     ]
   },
+  "oway": {
+    "name": "Oway",
+    "batch": "Summer 2024",
+    "status": "Active",
+    "github": [
+      "Oway-Inc"
+    ]
+  },
   "bucket-robotics": {
     "name": "Bucket Robotics",
     "batch": "Summer 2024",
@@ -16372,7 +15850,7 @@
   "anglera": {
     "name": "Anglera",
     "batch": "Summer 2024",
-    "status": "Active",
+    "status": "Acquired",
     "github": [
       "Anglera"
     ]
@@ -16650,6 +16128,14 @@
       "vly-ai"
     ]
   },
+  "moonshine": {
+    "name": "Moonshine",
+    "batch": "Fall 2024",
+    "status": "Active",
+    "github": [
+      "distillmoonshine"
+    ]
+  },
   "dexter": {
     "name": "Dexter",
     "batch": "Fall 2024",
@@ -16818,14 +16304,6 @@
     "status": "Active",
     "github": [
       "StampMail"
-    ]
-  },
-  "awen": {
-    "name": "awen",
-    "batch": "Winter 2025",
-    "status": "Active",
-    "github": [
-      "awenapp"
     ]
   },
   "karoo": {
@@ -17849,7 +17327,7 @@
     "batch": "Summer 2025",
     "status": "Active",
     "github": [
-      "verne-labs-ai"
+      "vernerobotics"
     ]
   },
   "datafruit": {
@@ -17922,7 +17400,8 @@
     "batch": "Summer 2025",
     "status": "Active",
     "github": [
-      "OnDeckFisheriesAI"
+      "OnDeckFisheriesAI",
+      "OnDeckAI"
     ]
   },
   "frizzle": {
@@ -18296,6 +17775,14 @@
       "trylapis"
     ]
   },
+  "aircaps-ai": {
+    "name": "AirCaps AI",
+    "batch": "Fall 2025",
+    "status": "Active",
+    "github": [
+      "aircaps"
+    ]
+  },
   "uplane": {
     "name": "Uplane",
     "batch": "Fall 2025",
@@ -18334,14 +17821,6 @@
     "status": "Active",
     "github": [
       "hyperspell"
-    ]
-  },
-  "locus": {
-    "name": "Locus",
-    "batch": "Fall 2025",
-    "status": "Active",
-    "github": [
-      "locus-technologies"
     ]
   },
   "sorce": {
@@ -18473,7 +17952,7 @@
       "multifactor",
       "multifactor-apps",
       "multifactor-products",
-      "multifactor-platform"
+      "multifactor-research"
     ]
   },
   "kestrel-ai": {
@@ -18588,6 +18067,14 @@
       "Zalos-io"
     ]
   },
+  "specific": {
+    "name": "Specific",
+    "batch": "Fall 2025",
+    "status": "Active",
+    "github": [
+      "specific-dev"
+    ]
+  },
   "automax-ai": {
     "name": "Automax.ai",
     "batch": "Fall 2025",
@@ -18612,12 +18099,28 @@
       "metorial"
     ]
   },
+  "teaflask": {
+    "name": "Teaflask",
+    "batch": "Spring 2026",
+    "status": "Active",
+    "github": [
+      "teaflask"
+    ]
+  },
   "karumi": {
     "name": "Karumi",
     "batch": "Fall 2025",
     "status": "Active",
     "github": [
       "karumi-inc"
+    ]
+  },
+  "efficient-computation-inc": {
+    "name": "Efficient Computation Inc.",
+    "batch": "Fall 2025",
+    "status": "Active",
+    "github": [
+      "efficientcomputation"
     ]
   },
   "uselemma": {
@@ -18666,6 +18169,14 @@
     "status": "Active",
     "github": [
       "miniswap-gg"
+    ]
+  },
+  "freeport-markets": {
+    "name": "Freeport Markets",
+    "batch": "Fall 2025",
+    "status": "Active",
+    "github": [
+      "FreeportMarkets"
     ]
   },
   "the-hog": {
@@ -18721,7 +18232,8 @@
     "batch": "Fall 2025",
     "status": "Active",
     "github": [
-      "Fastshot-ai"
+      "Fastshot-ai",
+      "fastshot-inc"
     ]
   },
   "markit": {
@@ -19077,6 +18589,14 @@
       "Patientdesk-AI"
     ]
   },
+  "chamber": {
+    "name": "Chamber",
+    "batch": "Winter 2026",
+    "status": "Active",
+    "github": [
+      "ChamberOrg"
+    ]
+  },
   "revion": {
     "name": "Revion",
     "batch": "Winter 2026",
@@ -19165,14 +18685,6 @@
     "status": "Active",
     "github": [
       "bubblelabai"
-    ]
-  },
-  "superset": {
-    "name": "Superset",
-    "batch": "Spring 2026",
-    "status": "Active",
-    "github": [
-      "superset-sh"
     ]
   },
   "servo7": {
@@ -19303,6 +18815,14 @@
       "databuddy-analytics"
     ]
   },
+  "vespin": {
+    "name": "Vespin",
+    "batch": "Spring 2026",
+    "status": "Active",
+    "github": [
+      "ReviewStage"
+    ]
+  },
   "totalis": {
     "name": "Totalis",
     "batch": "Spring 2026",
@@ -19391,6 +18911,14 @@
       "elyrasystems"
     ]
   },
+  "hevn-inc": {
+    "name": "HEVN, inc",
+    "batch": "Spring 2026",
+    "status": "Active",
+    "github": [
+      "hevn-inc"
+    ]
+  },
   "madrone": {
     "name": "Madrone",
     "batch": "Spring 2026",
@@ -19472,14 +19000,6 @@
       "gojiberryai"
     ]
   },
-  "paper-star": {
-    "name": "Paper Star",
-    "batch": "Spring 2026",
-    "status": "Active",
-    "github": [
-      "bypaperstar"
-    ]
-  },
   "ontora": {
     "name": "Ontora",
     "batch": "Spring 2026",
@@ -19502,6 +19022,14 @@
     "status": "Active",
     "github": [
       "keyframelabs"
+    ]
+  },
+  "agi-deploy-co": {
+    "name": "AGI Deploy Co",
+    "batch": "Spring 2026",
+    "status": "Active",
+    "github": [
+      "agidc"
     ]
   },
   "complir": {
@@ -19545,9 +19073,17 @@
       "laminar-run"
     ]
   },
+  "decuff": {
+    "name": "decuff",
+    "batch": "Spring 2026",
+    "status": "Active",
+    "github": [
+      "decuff"
+    ]
+  },
   "reason-machines": {
     "name": "Reason Machines",
-    "batch": "Spring 2026",
+    "batch": "Fall 2026",
     "status": "Active",
     "github": [
       "reason-machines"
@@ -19585,24 +19121,16 @@
       "MemoryStore"
     ]
   },
-  "testerarmy": {
-    "name": "TesterArmy",
-    "batch": "Spring 2026",
-    "status": "Active",
-    "github": [
-      "tester-army"
-    ]
-  },
   "mentlio": {
     "name": "Mentlio",
     "batch": "Summer 2026",
-    "status": "Active",
+    "status": "Inactive",
     "github": [
       "Mentlio"
     ]
   },
-  "general-aviation": {
-    "name": "General Aviation",
+  "general-aviation-company": {
+    "name": "General Aviation Company",
     "batch": "Spring 2026",
     "status": "Active",
     "github": [
@@ -19687,14 +19215,6 @@
     "status": "Active",
     "github": [
       "Kugelaudio"
-    ]
-  },
-  "insforge-instacloud": {
-    "name": "InsForge (InstaCloud)",
-    "batch": "Spring 2026",
-    "status": "Active",
-    "github": [
-      "InsForge"
     ]
   },
   "enjamb-labs": {
@@ -19833,6 +19353,14 @@
       "RealPact"
     ]
   },
+  "evident-machines": {
+    "name": "Evident Machines",
+    "batch": "Fall 2026",
+    "status": "Active",
+    "github": [
+      "Buildbox-Labs"
+    ]
+  },
   "dialogus": {
     "name": "Dialogus",
     "batch": "Summer 2026",
@@ -19889,9 +19417,17 @@
       "Zaplar-AB"
     ]
   },
+  "screenpipe": {
+    "name": "screenpipe",
+    "batch": "Summer 2026",
+    "status": "Active",
+    "github": [
+      "screenpipe"
+    ]
+  },
   "alkera-ai": {
     "name": "Alkera AI",
-    "batch": "Summer 2026",
+    "batch": "Fall 2026",
     "status": "Active",
     "github": [
       "AlkeraAI"
@@ -19937,12 +19473,28 @@
       "Agency-Tool-Company"
     ]
   },
+  "snowstone": {
+    "name": "Snowstone",
+    "batch": "Summer 2026",
+    "status": "Active",
+    "github": [
+      "Cerenovus"
+    ]
+  },
   "talentpluto": {
     "name": "Pluto",
     "batch": "Summer 2026",
     "status": "Active",
     "github": [
       "talentpluto"
+    ]
+  },
+  "machine0": {
+    "name": "machine0",
+    "batch": "Summer 2026",
+    "status": "Active",
+    "github": [
+      "machine0-io"
     ]
   },
   "graphify-labs": {
@@ -20023,14 +19575,6 @@
     "status": "Active",
     "github": [
       "marengox"
-    ]
-  },
-  "lumeria": {
-    "name": "Lumeria",
-    "batch": "Summer 2026",
-    "status": "Active",
-    "github": [
-      "lumeria-labs"
     ]
   },
   "cosmic-robotics": {
@@ -20130,6 +19674,14 @@
       "PetrarchAI"
     ]
   },
+  "hillstar": {
+    "name": "HillStar",
+    "batch": "Fall 2026",
+    "status": "Active",
+    "github": [
+      "Hillstar-ai"
+    ]
+  },
   "onecli": {
     "name": "OneCLI",
     "batch": "Summer 2026",
@@ -20170,14 +19722,6 @@
       "CautionHosting"
     ]
   },
-  "ufoai": {
-    "name": "UFO.ai",
-    "batch": "Fall 2026",
-    "status": "Active",
-    "github": [
-      "ufo-ai"
-    ]
-  },
   "neomatter": {
     "name": "Neomatter",
     "batch": "Fall 2026",
@@ -20202,6 +19746,14 @@
       "ConiferKit"
     ]
   },
+  "voyager": {
+    "name": "Voyager",
+    "batch": "Fall 2026",
+    "status": "Active",
+    "github": [
+      "voyager-so"
+    ]
+  },
   "herdr": {
     "name": "herdr",
     "batch": "Fall 2026",
@@ -20218,12 +19770,36 @@
       "Sentient-OS-Labs"
     ]
   },
+  "adalat-ai": {
+    "name": "Adalat AI",
+    "batch": "Fall 2026",
+    "status": "Active",
+    "github": [
+      "adalat-ai-tech"
+    ]
+  },
+  "reific": {
+    "name": "Reific",
+    "batch": "Fall 2026",
+    "status": "Active",
+    "github": [
+      "Reific-Inc"
+    ]
+  },
   "saccade": {
     "name": "Saccade",
     "batch": "Fall 2026",
     "status": "Active",
     "github": [
       "Saccade-YC-F26"
+    ]
+  },
+  "boat": {
+    "name": "Boat",
+    "batch": "Fall 2026",
+    "status": "Active",
+    "github": [
+      "ariana-dot-dev"
     ]
   },
   "inflection-space-systems": {
@@ -20265,14 +19841,6 @@
     "status": "Active",
     "github": [
       "nodus-compute"
-    ]
-  },
-  "bryel": {
-    "name": "Bryel",
-    "batch": "Fall 2026",
-    "status": "Active",
-    "github": [
-      "bryel-ai"
     ]
   },
   "truemile": {
@@ -20355,6 +19923,14 @@
       "Luce-Org"
     ]
   },
+  "0security": {
+    "name": "0.security",
+    "batch": "Fall 2026",
+    "status": "Active",
+    "github": [
+      "0sec-labs"
+    ]
+  },
   "ploid": {
     "name": "Ploid",
     "batch": "Fall 2026",
@@ -20369,6 +19945,14 @@
     "status": "Active",
     "github": [
       "Rystic-Inc"
+    ]
+  },
+  "vorelios": {
+    "name": "Vorelios",
+    "batch": "Fall 2026",
+    "status": "Active",
+    "github": [
+      "Vorelios"
     ]
   },
   "dreamscale-labs": {
@@ -20387,6 +19971,14 @@
       "Pomerado"
     ]
   },
+  "everyapp": {
+    "name": "EveryApp",
+    "batch": "Fall 2026",
+    "status": "Active",
+    "github": [
+      "every-app"
+    ]
+  },
   "particularity": {
     "name": "Particularity",
     "batch": "Fall 2026",
@@ -20395,12 +19987,12 @@
       "Particularity-Inc"
     ]
   },
-  "sinter-systems": {
-    "name": "Sinter",
+  "kanopy": {
+    "name": "Kanopy",
     "batch": "Fall 2026",
     "status": "Active",
     "github": [
-      "sintersystems"
+      "KanopyAI"
     ]
   },
   "obsessiondb": {
@@ -20416,7 +20008,8 @@
     "batch": "Fall 2026",
     "status": "Active",
     "github": [
-      "uxduckhq"
+      "uxduckhq",
+      "uxduck"
     ]
   },
   "sona8": {
@@ -20427,6 +20020,14 @@
       "Sona8-com"
     ]
   },
+  "axonnic": {
+    "name": "Axonnic",
+    "batch": "Fall 2026",
+    "status": "Active",
+    "github": [
+      "Axonnic-Inc"
+    ]
+  },
   "quippy": {
     "name": "Quippy",
     "batch": "Fall 2026",
@@ -20435,12 +20036,12 @@
       "quippy-app"
     ]
   },
-  "composal": {
-    "name": "Composal",
+  "epsilab-com": {
+    "name": "Epsilab",
     "batch": "Fall 2026",
     "status": "Active",
     "github": [
-      "ComposalAI"
+      "EpsilabAI"
     ]
   },
   "caveman": {
@@ -20457,6 +20058,14 @@
     "status": "Active",
     "github": [
       "acyclic-labs"
+    ]
+  },
+  "blinka": {
+    "name": "Blinka",
+    "batch": "Fall 2026",
+    "status": "Active",
+    "github": [
+      "Blinka-Tech"
     ]
   },
   "useterse": {
@@ -20489,6 +20098,22 @@
     "status": "Active",
     "github": [
       "The-Agentic-Data-Co"
+    ]
+  },
+  "superserve": {
+    "name": "Superserve",
+    "batch": "Fall 2026",
+    "status": "Active",
+    "github": [
+      "superserve-ai"
+    ]
+  },
+  "tilo": {
+    "name": "Tilo",
+    "batch": "Fall 2026",
+    "status": "Active",
+    "github": [
+      "tilo-os"
     ]
   },
   "openhack": {
