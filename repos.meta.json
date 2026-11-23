@@ -131,7 +131,7 @@
     "name": "Chatwoot",
     "batch": "Winter 2021",
     "is_hiring": false,
-    "team_size": 12,
+    "team_size": 14,
     "stage": "Early",
     "yc_url": "https://www.ycombinator.com/companies/chatwoot"
   },
@@ -355,7 +355,7 @@
     "name": "Chatwoot",
     "batch": "Winter 2021",
     "is_hiring": false,
-    "team_size": 12,
+    "team_size": 14,
     "stage": "Early",
     "yc_url": "https://www.ycombinator.com/companies/chatwoot"
   },
@@ -408,17 +408,17 @@
     "yc_url": "https://www.ycombinator.com/companies/aden"
   },
   "traceroot-ai/traceroot": {
-    "name": "TraceRoot.AI",
+    "name": "traceroot",
     "batch": "Summer 2025",
     "is_hiring": true,
     "team_size": 4,
     "stage": "Early",
-    "yc_url": "https://www.ycombinator.com/companies/traceroot-ai"
+    "yc_url": "https://www.ycombinator.com/companies/traceroot"
   },
   "usemoss/moss": {
     "name": "Moss",
     "batch": "Fall 2025",
-    "is_hiring": true,
+    "is_hiring": false,
     "team_size": 5,
     "stage": "Early",
     "yc_url": "https://www.ycombinator.com/companies/moss"
@@ -772,7 +772,7 @@
     "batch": "Summer 2016",
     "is_hiring": true,
     "team_size": 1450,
-    "stage": "Early",
+    "stage": "Growth",
     "yc_url": "https://www.ycombinator.com/companies/meesho"
   },
   "supermedium/moonrider": {
@@ -908,14 +908,14 @@
     "batch": "Winter 2019",
     "is_hiring": false,
     "team_size": 22,
-    "stage": "Early",
+    "stage": "Growth",
     "yc_url": "https://www.ycombinator.com/companies/dagger"
   },
   "skyhook-io/radar": {
     "name": "Skyhook",
     "batch": "Winter 2023",
     "is_hiring": false,
-    "team_size": 7,
+    "team_size": 5,
     "stage": "Early",
     "yc_url": "https://www.ycombinator.com/companies/skyhook"
   },
@@ -1034,7 +1034,7 @@
   "anaralabs/lector": {
     "name": "Anara",
     "batch": "Summer 2024",
-    "is_hiring": true,
+    "is_hiring": false,
     "team_size": 5,
     "stage": "Early",
     "yc_url": "https://www.ycombinator.com/companies/anara"
@@ -1131,7 +1131,7 @@
     "name": "Respan",
     "batch": "Winter 2024",
     "is_hiring": true,
-    "team_size": 20,
+    "team_size": 17,
     "stage": "Early",
     "yc_url": "https://www.ycombinator.com/companies/respan"
   },
@@ -1166,5 +1166,21 @@
     "team_size": 120,
     "stage": "Growth",
     "yc_url": "https://www.ycombinator.com/companies/mattermost"
+  },
+  "fosrl/pangolin": {
+    "name": "Pangolin",
+    "batch": "Summer 2025",
+    "is_hiring": true,
+    "team_size": 3,
+    "stage": "Early",
+    "yc_url": "https://www.ycombinator.com/companies/pangolin"
+  },
+  "e2e-inc/e2e": {
+    "name": "e2e",
+    "batch": "Spring 2026",
+    "is_hiring": true,
+    "team_size": 8,
+    "stage": "Early",
+    "yc_url": "https://www.ycombinator.com/companies/e2e"
   }
 }
